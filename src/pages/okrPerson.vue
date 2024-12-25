@@ -9,7 +9,7 @@ const loginMessage = useCounterStore()
 //获取个人OKR列表
 const getPersonOkrList = () => {
   uni.request({
-    url: 'http://y4pqfi.natappfree.cc/personal/list',
+    url: 'http://139.159.210.77:1701/personal/list',
     method: 'GET',
     header: {
       "Login-Type": "r6Vsr0",
@@ -59,7 +59,7 @@ const showMedal = ref({
 //获取用户未读的勋章
 const getUnreadMedal = () => {
   uni.request({
-    url: 'http://y4pqfi.natappfree.cc/medal/list/unread',
+    url: 'http://139.159.210.77:1701/medal/list/unread',
     method: 'GET',
     header: {
       "Login-Type": "r6Vsr0",
@@ -73,7 +73,7 @@ const getUnreadMedal = () => {
       }
       if (res.data.data.length) {
         showMedal.value = res.data.data[0]
-        showMedal.value.url = 'http://y4pqfi.natappfree.cc/' + showMedal.value.url
+        showMedal.value.url = 'http://139.159.210.77:1701/' + showMedal.value.url
         console.log(showMedal.value);
         if (notCreatedPerson.value) {
           popup1.value.open()
@@ -100,7 +100,7 @@ onReady(() => {
 const close = () => {
   //用户知晓获得新勋章
   uni.request({
-    url: `http://y4pqfi.natappfree.cc/medal/read/${showMedal.value.medalId}`,
+    url: `http://139.159.210.77:1701/medal/read/${showMedal.value.medalId}`,
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -126,7 +126,7 @@ const toWall = () => {
   }
   //用户知晓获得新勋章
   uni.request({
-    url: `http://y4pqfi.natappfree.cc/medal/read/${showMedal.value.medalId}`,
+    url: `http://139.159.210.77:1701/medal/read/${showMedal.value.medalId}`,
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -180,7 +180,7 @@ const backPerson = () => {
 const createCompletePerson = () => {
   //创建OKR
   uni.request({
-    url: 'http://y4pqfi.natappfree.cc/core/create',
+    url: 'http://139.159.210.77:1701/core/create',
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -226,7 +226,7 @@ const noTeam = ref(true)
 //获取团队模式OKR列表
 const getTeamPersonList = () => {
   uni.request({
-    url: 'http://y4pqfi.natappfree.cc/teampersonal/list',
+    url: 'http://139.159.210.77:1701/teampersonal/list',
     method: 'GET',
     header: {
       "Login-Type": "r6Vsr0",
@@ -258,7 +258,7 @@ const pattern = ref({
 
 const content = ref([
   {
-    iconPath: 'http://y4pqfi.natappfree.cc/media/static/返回.png',
+    iconPath: 'http://139.159.210.77:1701/media/static/返回.png',
     text: '返回',
   }
 ])
@@ -319,7 +319,7 @@ const trigger = () => {
           </div>
 
           <div class="middle">
-            <div class="saying"><img class="png" src="http://y4pqfi.natappfree.cc/media/static/灯泡.png" alt="">定目标，抓过程，拿结果
+            <div class="saying"><img class="png" src="http://139.159.210.77:1701/media/static/灯泡.png" alt="">定目标，抓过程，拿结果
             </div>
             <button class="button phone" @click="createOkrPerson">创建OKR</button>
             <div class="saying">还没有OKR</div>
@@ -400,7 +400,7 @@ const trigger = () => {
           <div class="teamList">团队模式OKR列表</div>
           <!-- 未加入团队的样式 -->
           <div v-if="noTeam">
-            <img class="empty" src="http://y4pqfi.natappfree.cc/media/static/空状态加入的团队.png" alt="">
+            <img class="empty" src="http://139.159.210.77:1701/media/static/空状态加入的团队.png" alt="">
           </div>
 
           <!-- 已加入团队的样式 -->

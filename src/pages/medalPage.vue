@@ -1,3 +1,4 @@
+//TODO:USE IT AT FINAL BUT NOT NOW
 <script setup>
 import { ref } from 'vue'
 //引入仓库
@@ -10,7 +11,7 @@ const medalList = ref()
 
 //获取勋章列表
 uni.request({
-  url: `http://y4pqfi.natappfree.cc/medal/list/all`,
+  url: `http://139.159.210.77:1701/medal/list/all`,
   method: 'GET',
   header: {
     "Login-Type": "r6Vsr0",
@@ -24,7 +25,7 @@ uni.request({
     }
     medalList.value = res.data.data
     for (let i = 0; i < medalList.value.length; i++) {
-      medalList.value[i].url = "http://y4pqfi.natappfree.cc/" + medalList.value[i].url
+      medalList.value[i].url = "http://139.159.210.77:1701/" + medalList.value[i].url
     }
     console.log(medalList.value);
   }
@@ -45,7 +46,7 @@ const showMedal = ref({
 //获取用户未读的勋章
 const getUnreadMedal = () => {
   uni.request({
-    url: 'http://y4pqfi.natappfree.cc/medal/list/unread',
+    url: 'http://139.159.210.77:1701/medal/list/unread',
     method: 'GET',
     header: {
       "Login-Type": "r6Vsr0",
@@ -59,7 +60,7 @@ const getUnreadMedal = () => {
       }
       if (res.data.data.length) {
         showMedal.value = res.data.data[0]
-        showMedal.value.url = 'http://y4pqfi.natappfree.cc/' + showMedal.value.url
+        showMedal.value.url = 'http://139.159.210.77:1701/' + showMedal.value.url
           popup.value.open()
       }
     }
@@ -74,7 +75,7 @@ onReady(() => {
 const close = () => {
   //用户知晓获得新勋章
   uni.request({
-    url: `http://y4pqfi.natappfree.cc/medal/read/${showMedal.value.medalId}`,
+    url: `http://139.159.210.77:1701/medal/read/${showMedal.value.medalId}`,
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -184,7 +185,7 @@ page {
   line-height: 30rpx;
   height: 15vh;
   width: 100vw;
-  background: url(http://y4pqfi.natappfree.cc/media/static/靶子.png) no-repeat right;
+  background: url(http://139.159.210.77:1701/media/static/靶子.png) no-repeat right;
 }
 
 .update {

@@ -17,17 +17,19 @@ const teamRecord = () => {
   });
 }
 
+
 const medal = () => {
   uni.navigateTo({
     url: '/pages/medalPage' // 跳转的页面路径
   });
 }
 
-const aboutUs = () => {
-  uni.navigateTo({
-    url: '/pages/aboutUs' // 跳转的页面路径
-  });
-}
+//HACK
+// const aboutUs = () => {
+//   uni.navigateTo({
+//     url: '/pages/aboutUs' // 跳转的页面路径
+//   });
+// }
 
 //用户默认头像与昵称
 const nickName = ref('用户昵称')
@@ -35,7 +37,7 @@ const avatarUrl = ref('https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQ
 
 //从后端获取用户信息并渲染
 uni.request({
-  url: 'http://y4pqfi.natappfree.cc/user/userinfo',
+  url: 'http://139.159.210.77:1701/user/userinfo',
   method: 'GET',
   header: {
     "Login-Type": "r6Vsr0",
@@ -49,7 +51,7 @@ uni.request({
     }
     nickName.value = res.data.data.nickname
     if(res.data.data.photo){
-      avatarUrl.value = 'http://y4pqfi.natappfree.cc/' + res.data.data.photo
+      avatarUrl.value = 'http://139.159.210.77:1701/' + res.data.data.photo
     }
   }
 })
@@ -59,7 +61,7 @@ const onChooseAvatar = e => {
   avatarUrl.value = e.detail.avatarUrl
   //将头像保存到后端
   uni.uploadFile({
-    url: 'http://y4pqfi.natappfree.cc/user/photo/upload',
+    url: 'http://139.159.210.77:1701/user/photo/upload',
     filePath: avatarUrl.value, //头像
     header: {
       "Login-Type": "r6Vsr0",
@@ -81,7 +83,7 @@ const onChooseAvatar = e => {
 const setName = e => {
   nickName.value = e.detail.value
    uni.request({
-    url: 'http://y4pqfi.natappfree.cc/user/improve',
+    url: 'http://139.159.210.77:1701/user/improve',
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -137,7 +139,7 @@ const setName = e => {
         </div>
       </view>
     </view>
-
+    
     <view class="orders">
       <view class="title" @tap="medal">
         荣誉勋章
@@ -147,14 +149,15 @@ const setName = e => {
       </view>
     </view>
 
-    <view class="orders">
+    <!--//HACK-->
+    <!-- <view class="orders">
       <view class="title" @tap="aboutUs">
         关于我们
         <div class="navigator" url="/pagesOrder/list/list?type=0" hover-class="none">
           点击查看<text class="icon-right"></text>
         </div>
       </view>
-    </view>
+    </view> -->
 
   </scroll-view>
 </template>

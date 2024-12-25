@@ -57,7 +57,7 @@ const pattern = ref({
 
 const content = ref([
   {
-    iconPath: 'http://y4pqfi.natappfree.cc/media/static/查看总结.png',
+    iconPath: 'http://139.159.210.77:1701/media/static/查看总结.png',
     text: '查看总结',
   }
 ])
@@ -72,9 +72,9 @@ const trigger = () => {
 <template>
   <!-- 创建OKR显示页面 -->
   <div>
-    <img src="http://y4pqfi.natappfree.cc/media/static/右箭头.png" alt="" class="rightArrow">
-    <img src="http://y4pqfi.natappfree.cc/media/static/上箭头.png" alt="" class="topArrow">
-    <img src="http://y4pqfi.natappfree.cc/media/static/靶子.png" alt="" class="target">
+    <img src="http://139.159.210.77:1701/media/static/右箭头.png" alt="" class="rightArrow">
+    <img src="http://139.159.210.77:1701/media/static/上箭头.png" alt="" class="topArrow">
+    <img src="http://139.159.210.77:1701/media/static/靶子.png" alt="" class="target">
 
     <div class="flexBox1">
 
@@ -292,7 +292,7 @@ const trigger = () => {
             <checkbox value="r2" color="rgb(242, 177, 73)" :checked=item.isCompleted :disabled=true />
             {{ item.content }}
           </label>
-          <img class="deleteState" src="http://y4pqfi.natappfree.cc/media/static/黄色叉叉.png" alt=""
+          <img class="deleteState" src="http://139.159.210.77:1701/media/static/黄色叉叉.png" alt=""
             @click="planDelete(1, item.id)">
         </div>
 
@@ -375,13 +375,13 @@ const trigger = () => {
   box-sizing: border-box;
   width: 40vw;
   height: 44vh;
-  background-color: rgb(227, 246, 253);
-  border: rgb(41, 168, 211) solid 3px;
-  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+  border: rgb(0, 0, 0) solid 1px;
   color: rgb(41, 168, 211);
   font-size: 16px;
   padding: 10px;
   font-weight: 700;
+  box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.2);
 }
 
 .leftTop2 {
@@ -389,13 +389,14 @@ const trigger = () => {
   box-sizing: border-box;
   width: 40vw;
   height: 44vh;
-  background-color: rgb(253, 250, 219);
-  border: rgb(223, 175, 97) solid 3px;
-  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+  border: rgb(0 ,0 ,0) solid 1px;
   padding: 10px;
   color: rgb(223, 175, 97);
   font-size: 16px;
   font-weight: 700;
+  box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.2);
+
 }
 
 .container1 {
@@ -500,13 +501,13 @@ const trigger = () => {
   box-sizing: border-box;
   width: 40vw;
   height: 44vh;
-  background-color: rgb(222, 251, 247);
-  border: rgb(102, 208, 193) solid 3px;
-  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+  border: rgb(0, 0, 0) solid 1px;
   padding: 10px;
   color: rgb(102, 208, 193);
   font-size: 16px;
   font-weight: 700;
+  box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.2);
 }
 
 .rightBotton4 {
@@ -514,13 +515,14 @@ const trigger = () => {
   box-sizing: border-box;
   width: 40vw;
   height: 44vh;
-  background-color: rgb(255, 234, 221);
-  border: rgb(231, 163, 137) solid 3px;
+  background-color: rgb(255, 255, 255);
+  border: rgb(0, 0, 0) solid 1px;
   border-radius: 6px;
   padding: 10px;
   color: rgb(231, 163, 137);
   font-size: 16px;
   font-weight: 700;
+  box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.2);
 }
 
 .container {

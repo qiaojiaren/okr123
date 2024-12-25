@@ -33,7 +33,7 @@ const teamOKR = async (coreId, flag) => {
   loginMessage.OkrcoreId = coreId
   loginMessage.scene = 'scene-t'
   await uni.request({
-    url: 'http://y4pqfi.natappfree.cc/core/search',
+    url: 'http://139.159.210.77:1701/core/search',
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",

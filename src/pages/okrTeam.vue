@@ -10,7 +10,7 @@ const managelist = ref([])
 
 const request = () => {
   uni.request({
-    url: 'http://y4pqfi.natappfree.cc/team/list',
+    url: 'http://139.159.210.77:1701/team/list',
     method: 'get',
     header: {
       "Login-Type": "r6Vsr0",
@@ -20,7 +20,7 @@ const request = () => {
       managelist.value = res.data.data
       console.log(res.data.data)
       uni.request({
-        url: 'http://y4pqfi.natappfree.cc/teampersonal/list',
+        url: 'http://139.159.210.77:1701/teampersonal/list',
         method: 'get',
         header: {
           "Login-Type": "r6Vsr0",
@@ -66,7 +66,7 @@ const pattern = ref({
 
 const content = ref([
   {
-    iconPath: 'http://y4pqfi.natappfree.cc/media/static/创建团队.png',
+    iconPath: 'http://139.159.210.77:1701/media/static/创建团队.png',
     text: '创建团队',
   },
 
@@ -86,7 +86,7 @@ const trigger = (e) => {
       success: (res) => {
         if (res.confirm) {
           uni.request({
-              url: 'http://y4pqfi.natappfree.cc/core/create',
+              url: 'http://139.159.210.77:1701/core/create',
               method: 'POST',
               header: {
                 "Login-Type": "r6Vsr0",
@@ -128,7 +128,7 @@ const teamokr = (teamId, name, item) => {
   loginMessage.teamname = name
   loginMessage.nickname = item.nickname
   console.log(item.id)
-  loginMessage.photo = 'http://y4pqfi.natappfree.cc/' + item.photo
+  loginMessage.photo = 'http://139.159.210.77:1701/' + item.photo
   if (loginMessage.id == item.id)
     loginMessage.priviledge = true
   else
@@ -155,7 +155,7 @@ onShow(() => {
         @click="teamokr(item.teamId, item.teamName, item.manager)"></uni-list-item>
     </uni-list>
   </uni-card>
-  <img v-else class="empty" src="http://y4pqfi.natappfree.cc/media/static/空状态加入的团队.png" alt="">
+  <img v-else class="empty" src="http://139.159.210.77:1701/media/static/空状态加入的团队.png" alt="">
 
   <!--管理的团队列表-->
   <text class="teamFont">我管理的团队</text>
@@ -165,7 +165,7 @@ onShow(() => {
       </uni-list-item>
     </uni-list>
   </uni-card>
-  <img v-else class="empty" src="http://y4pqfi.natappfree.cc/media/static/空状态管理的团队.png" alt="">
+  <img v-else class="empty" src="http://139.159.210.77:1701/media/static/空状态管理的团队.png" alt="">
 
   <view>
     <uni-fab horizontal="right" vertical="bottom" direction="vertical" :content="content" :pattern="pattern"

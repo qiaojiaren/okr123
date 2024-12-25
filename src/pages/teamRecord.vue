@@ -9,7 +9,7 @@ const teamOkrList = ref()
 const teamNoOkr = ref(true)
 
 uni.request({
-  url: 'http://y4pqfi.natappfree.cc/teampersonal/list',
+  url: 'http://139.159.210.77:1701/teampersonal/list',
   method: 'get',
   header: {
     "Login-Type": "r6Vsr0",
@@ -40,7 +40,7 @@ const showRecord = teamId => {
 
   <!-- 无历史记录时的显示效果 -->
   <div v-if="teamNoOkr">
-    <img class="empty" src="http://y4pqfi.natappfree.cc/media/static/空状态OKR历史记录.png" alt="">
+    <img class="empty" src="http://139.159.210.77:1701/media/static/空状态OKR历史记录.png" alt="">
   </div>
 
   <!-- 有历史记录时的显示效果 -->

@@ -21,10 +21,6 @@ const objective = ref('') //目标
 
 //查看/编辑第一象限
 const firstQuadrant = () => {
-  console.log("点击")
-  console.log("点击")
-  console.log("点击")
-  console.log("点击")
   if (loginMessage.okrInformation.firstQuadrantVO.objective) { //第一象限已初始化
     
     cardshow2.value.open()
@@ -38,7 +34,7 @@ const firstQuadrant = () => {
 const sliderChange = (e, id) => {
   //更新信心指数
   uni.request({
-    url: 'http://y4pqfi.natappfree.cc/keyresult/update',
+    url: 'http://139.159.210.77:1701/keyresult/update',
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -76,7 +72,7 @@ const setFirstQuadrant = async () => {
 
   //设置目标
   uni.request({
-    url: 'http://y4pqfi.natappfree.cc/firstquadrant/init',
+    url: 'http://139.159.210.77:1701/firstquadrant/init',
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -136,7 +132,7 @@ const comfirmAddKeyResult = () => {
   }
 
   uni.request({
-    url: 'http://y4pqfi.natappfree.cc/keyresult/add',
+    url: 'http://139.159.210.77:1701/keyresult/add',
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -211,7 +207,7 @@ const setShortDeadline = async () => {
   }
 
   uni.request({
-    url: 'http://y4pqfi.natappfree.cc/secondquadrant/init',
+    url: 'http://139.159.210.77:1701/secondquadrant/init',
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -269,7 +265,7 @@ const setLongDeadline = async () => {
   }
 
   uni.request({
-    url: 'http://y4pqfi.natappfree.cc/thirdquadrant/init',
+    url: 'http://139.159.210.77:1701/thirdquadrant/init',
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -326,7 +322,7 @@ const addPlanFun = (quadrantNum, option) => {
           return
         }
         uni.request({
-          url: `http://y4pqfi.natappfree.cc/task/${option}/add`,
+          url: `http://139.159.210.77:1701/task/${option}/add`,
           method: 'POST',
           header: {
             "Login-Type": "r6Vsr0",
@@ -384,7 +380,7 @@ const addLongPlan = () => {
 //taskNum为任务类型
 const planCompleted = (taskNum, id, content, isCompleted) => {
   uni.request({
-    url: `http://y4pqfi.natappfree.cc/task/${taskNum}/update`,
+    url: `http://139.159.210.77:1701/task/${taskNum}/update`,
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -412,7 +408,7 @@ const planCompleted = (taskNum, id, content, isCompleted) => {
 //删除一个任务
 const planDelete = (taskNum, id) => {
   uni.request({
-    url: `http://y4pqfi.natappfree.cc/task/${taskNum}/remove`,
+    url: `http://139.159.210.77:1701/task/${taskNum}/remove`,
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -473,7 +469,7 @@ const confirmAddStatus = () => {
     }
   }
   uni.request({
-    url: 'http://y4pqfi.natappfree.cc/flag/add',
+    url: 'http://139.159.210.77:1701/flag/add',
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -511,7 +507,7 @@ const confirmAddStatus = () => {
 //修改状态指标颜色值
 const updateColor = (label, id, color) => {
   uni.request({
-    url: 'http://y4pqfi.natappfree.cc/flag/update',
+    url: 'http://139.159.210.77:1701/flag/update',
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -544,7 +540,7 @@ const updateColor = (label, id, color) => {
 //删除一条状态指标
 const deleteState = id => {
   uni.request({
-    url: 'http://y4pqfi.natappfree.cc/flag/remove',
+    url: 'http://139.159.210.77:1701/flag/remove',
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -656,7 +652,7 @@ const comfirmFinishOkr = async () => {
   }
 
   await uni.request({
-    url: 'http://y4pqfi.natappfree.cc/core/complete',
+    url: 'http://139.159.210.77:1701/core/complete',
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -675,7 +671,7 @@ const comfirmFinishOkr = async () => {
   })
 
   uni.request({
-    url: 'http://y4pqfi.natappfree.cc/core/summary',
+    url: 'http://139.159.210.77:1701/core/summary',
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -725,7 +721,7 @@ const pattern = ref({
 
 const content = ref([
   {
-    iconPath: 'http://y4pqfi.natappfree.cc/media/static/数据分析.png',
+    iconPath: 'http://139.159.210.77:1701/media/static/数据分析.png',
     text: '数据分析',
   }
 ])
@@ -743,9 +739,9 @@ const trigger = e => {
 <template>
   <!-- 创建OKR显示页面 -->
   <div>
-    <img src="http://y4pqfi.natappfree.cc/media/static/右箭头.png" alt="" class="rightArrow">
-    <img src="http://y4pqfi.natappfree.cc/media/static/上箭头.png" alt="" class="topArrow">
-    <img src="http://y4pqfi.natappfree.cc/media/static/靶子.png" alt="" class="target">
+    <img src="http://139.159.210.77:1701/media/static/右箭头.png" alt="" class="rightArrow">
+    <img src="http://139.159.210.77:1701/media/static/上箭头.png" alt="" class="topArrow">
+    <img src="http://139.159.210.77:1701/media/static/靶子.png" alt="" class="target">
 
     <!-- 悬浮按钮 -->
     <uni-fab horizontal="left" vertical="bottom" direction="vertical" :content="content" :pattern="pattern"
@@ -1010,7 +1006,7 @@ const trigger = e => {
               @click="planCompleted(1, item.id, item.content, item.isCompleted)" />
             {{ item.content }}
           </label>
-          <img class="deleteState" src="http://y4pqfi.natappfree.cc/media/static/黄色叉叉.png" alt=""
+          <img class="deleteState" src="http://139.159.210.77:1701/media/static/黄色叉叉.png" alt=""
             @click="planDelete(1, item.id)">
         </div>
 
@@ -1022,7 +1018,7 @@ const trigger = e => {
               @click="planCompleted(2, item.id, item.content, item.isCompleted)" />
             {{ item.content }}
           </label>
-          <img class="deleteState" src="http://y4pqfi.natappfree.cc/media/static/黄色叉叉.png" alt=""
+          <img class="deleteState" src="http://139.159.210.77:1701/media/static/黄色叉叉.png" alt=""
             @click="planDelete(2, item.id)">
         </div>
       </div>
@@ -1068,7 +1064,7 @@ const trigger = e => {
             <checkbox value="r2" color="rgb(41, 200, 179)" :checked=item.isCompleted
               @click="planCompleted(0, item.id, item.content, item.isCompleted)" />{{ item.content }}
           </label>
-          <img class="deleteState" src="http://y4pqfi.natappfree.cc/media/static/绿色叉叉.png" alt=""
+          <img class="deleteState" src="http://139.159.210.77:1701/media/static/绿色叉叉.png" alt=""
             @click="planDelete(0, item.id)">
         </div>
 
@@ -1118,7 +1114,7 @@ const trigger = e => {
             <div class="circle3" :class="{ circleActive: item.color === '#000002' }"
               @click="updateColor(item.label, item.id, 2)"></div>
           </div>
-          <img class="deleteState" @click="deleteState(item.id)" src="http://y4pqfi.natappfree.cc/media/static/红色叉叉.png"
+          <img class="deleteState" @click="deleteState(item.id)" src="http://139.159.210.77:1701/media/static/红色叉叉.png"
             alt="">
         </div>
 
@@ -1168,12 +1164,12 @@ const trigger = e => {
   width: 40vw;
   height: 44vh;
   background-color: #FFFFFF;
-  border: rgb(0, 0, 0) solid 3px;
-  border-radius: 6px;
+  border: rgb(0, 0, 0) solid 1px;
   color: rgb(41, 168, 211);
   font-size: 16px;
   padding: 10px;
   font-weight: 700;
+  box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.2);
 }
 
 .title {
@@ -1186,13 +1182,13 @@ const trigger = e => {
   box-sizing: border-box;
   width: 40vw;
   height: 44vh;
-  background-color: rgb(253, 250, 219);
-  border: rgb(223, 175, 97) solid 3px;
-  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+  border:rgb(0, 0, 0) solid 1px;
   padding: 10px;
   color: rgb(223, 175, 97);
   font-size: 16px;
   font-weight: 700;
+  box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.2);
 }
 
 .container1 {
@@ -1297,13 +1293,13 @@ const trigger = e => {
   box-sizing: border-box;
   width: 40vw;
   height: 44vh;
-  background-color: rgb(222, 251, 247);
-  border: rgb(102, 208, 193) solid 3px;
-  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+  border: rgb(0, 0, 0) solid 1px;
   padding: 10px;
   color: rgb(102, 208, 193);
   font-size: 16px;
   font-weight: 700;
+  box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.2);
 }
 
 .rightBotton4 {
@@ -1311,13 +1307,13 @@ const trigger = e => {
   box-sizing: border-box;
   width: 40vw;
   height: 44vh;
-  background-color: rgb(255, 234, 221);
-  border: rgb(231, 163, 137) solid 3px;
-  border-radius: 6px;
+  background-color:  rgb(255, 255, 255);
+  border: rgb(0, 0, 0) solid 1px;
   padding: 10px;
   color: rgb(231, 163, 137);
   font-size: 16px;
   font-weight: 700;
+  box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.2);
 }
 
 .container {
@@ -1394,8 +1390,6 @@ const trigger = e => {
   z-index: 9999999;
   width: 85vw;
   height: 90vh;
-  /* 圆角属性 */
-  border-radius: 10px;
   /* 盒子阴影 */
   box-shadow: 3px 3px 15px #535353;
   color: white;
