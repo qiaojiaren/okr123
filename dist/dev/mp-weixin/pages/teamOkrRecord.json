@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "团队OKR历史记录",
+  "usingComponents": {
+    "read-only-tree": "../components/readOnlyTree"
+  }
+}

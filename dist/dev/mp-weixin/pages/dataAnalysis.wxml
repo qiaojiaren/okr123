@@ -1,0 +1,1 @@
+<view class="data-v-ae5d4bd0"><view class="data-v-ae5d4bd0"><view class="marginTop data-v-ae5d4bd0"></view><l-echart class="echart r data-v-ae5d4bd0" u-r="chart1" bindfinished="{{b}}" u-i="ae5d4bd0-0" bind:__l="__l"></l-echart><l-echart class="echart r data-v-ae5d4bd0" u-r="chart2" bindfinished="{{d}}" u-i="ae5d4bd0-1" bind:__l="__l"></l-echart></view></view>

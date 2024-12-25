@@ -1,0 +1,198 @@
+
+.title {
+  font-size: 6vw;
+  font-weight: bold;
+  margin-bottom: 1vw;
+}
+.png {
+  width: 7vw;
+  height: 7vw;
+  vertical-align: middle;
+}
+.textBox {
+  width: 85vw;
+  padding: 10px;
+  margin: 3vw auto;
+  border-radius: 5px;
+  box-shadow: 3px 3px 15px #535353;
+  color: white;
+  text-shadow: 2px 2px 3px #000000;
+  background: rgba(63, 194, 237, 0.5) url(http://139.159.210.77:1701/media/static/靶子.png) no-repeat center;
+}
+.flexBox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.squaze {
+  width: 100vw;
+  height: 100vw;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+}
+.my-box {
+  width: 50vw;
+  height: 50vw;
+  position: absolute;
+  top: calc(50% - 25vw);
+  left: calc(50% - 25vw);
+  /*3D旋转*/
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% 100px;
+  Animation: myrotate 15s ease-in-out infinite;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: move;
+}
+.my-animation {
+  animation-play-state: paused;
+}
+.no-animation {
+  animation: none;
+}
+.my-box::after {
+  position: relative;
+}
+.box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-size: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.color {
+  opacity: 1;
+}
+.box-1 {
+  top: 0;
+  left: 0;
+  /* background-color: rgba(234, 252, 71, 0.9); */
+  background-color: rgb(202, 130, 248, 0.9);
+  box-shadow: 0 0 50px 5px rgb(229, 255, 0, 0.5);
+  /* box-shadow: 0 0 50px 5px #80d6ff; */
+  transform: rotateY(180deg);
+}
+.box-2 {
+  top: 0;
+  left: -100%;
+  /* background-color: rgb(1, 255, 221, 0.9); */
+  background-color: rgb(237, 247, 152, 0.9);
+  box-shadow: 0 0 50px 5px rgb(1, 255, 221, 0.5);
+  /* box-shadow: 0 0 50px 5px #edf798; */
+  transform-origin: left;
+  transform: rotateY(-90deg) translateZ(-50vw);
+}
+.box-3 {
+  top: 100%;
+  left: 0;
+  /* background-color: rgba(203, 73, 255, 0.9); */
+  background-color: rgb(250, 181, 122, 0.9);
+  box-shadow: 0 0 50px 5px rgb(183, 0, 255, 0.5);
+  /* box-shadow: 0 0 50px 5px #fab57a; */
+  transform-origin: top;
+  transform: rotateX(-90deg) translateY(-50vw);
+}
+.box-4 {
+  top: 0;
+  left: 100%;
+  /* background-color: rgba(57, 76, 246, 0.9); */
+  background-color: rgba(243, 116, 116, 0.9);
+  box-shadow: 0 0 50px 5px rgb(0, 26, 255, 0.5);
+  /* box-shadow: 0 0 50px 5px #f06868; */
+  transform-origin: right;
+  transform: rotateY(90deg) translateZ(-50vw);
+}
+.box-5 {
+  top: -100%;
+  left: 0;
+  /* background-color: rgba(250, 135, 89, 0.9); */
+  background-color: rgb(163, 222, 131, 0.9);
+  box-shadow: 0 0 50px 5px rgb(255, 72, 0, 0.5);
+  /* box-shadow: 0 0 50px 5px #a3de83; */
+  transform-origin: bottom;
+  transform: rotateX(90deg) translateY(50vw);
+}
+.box-6 {
+  top: 0;
+  left: 0;
+  /* background-color: rgba(1, 255, 192, 0.9); */
+  background-color: rgb(128, 214, 255, 0.9);
+  box-shadow: 0 0 100px 10px rgb(229, 255, 0, 0.5);
+  /* box-shadow: 0 0 50px 5px #ca82f8; */
+  transform: translateZ(50vw);
+}
+@keyframes myrotate {
+0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+100% {
+    transform: rotateX(-360deg) rotateY(-360deg) rotateZ(-360deg);
+}
+}
+.squazeTips {
+  font-size: 26rpx;
+  color: #999;
+  margin: 0 0 0 10px;
+}
+.card {
+  box-sizing: border-box;
+  position: fixed;
+  top: 5vh;
+  left: 50vw;
+  transform: translate(-50%);
+  z-index: 9999999;
+  width: 85vw;
+  height: 90vh;
+  /* 圆角属性 */
+  border-radius: 10px;
+  /* 盒子阴影 */
+  box-shadow: 3px 3px 15px #535353;
+  padding: 15px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  overflow-y: auto;
+}
+.answerTitle {
+  font-size: 20px;
+  margin: 10px 0;
+  text-shadow: 2px 2px 4px #000000;
+}
+.tips {
+  font-size: 26rpx;
+  color: #fff;
+  margin: 15px 0;
+}
+.teamCard {
+  background-image: linear-gradient(200deg, #78f, #f78);
+}
+.whyCard {
+  background-image: linear-gradient(200deg, #f7797d, #fbd786);
+}
+.howCard {
+  background-image: linear-gradient(200deg, #a770ef, #cf8bf3, #fdb99b);
+}
+.errorsCard {
+  background-image: linear-gradient(200deg, #7f7fd5, #86a8e7, #91eae4);
+}
+.personalCard {
+  background-image: linear-gradient(200deg, #00c9ff, #92fe9d);
+}
+.whatCard {
+  background-image: linear-gradient(200deg, #c471ed, #12c2e9);
+}
+.contentTitle {
+  font-size: 18px;
+  margin: 10px 0;
+  text-shadow: 2px 2px 4px #000000;
+}
+.text {
+  line-height: 1.5em;
+}
+.youCanGet{
+  width: 100vw;
+}

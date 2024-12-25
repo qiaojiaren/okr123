@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "数据分析",
+  "usingComponents": {
+    "l-echart": "../components/l-echart/l-echart"
+  }
+}

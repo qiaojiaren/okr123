@@ -1,0 +1,1 @@
+<view class="tree data-v-77a22c05"><view class="smallTips data-v-77a22c05">点击节点可查看团队OKR</view><view class="tree-content data-v-77a22c05" bindtouchstart="{{b}}" bindtouchmove="{{c}}" style="{{'left:' + d + ';' + ('transform:' + e)}}"><read-only-tree wx:if="{{a}}" class="data-v-77a22c05" u-i="77a22c05-0" bind:__l="__l" u-p="{{a}}"></read-only-tree></view></view>

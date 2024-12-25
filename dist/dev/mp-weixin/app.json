@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/loginPage",
+    "pages/okrIntroduce",
+    "pages/okrPerson",
+    "pages/okrTeam",
+    "pages/okrUserinfo",
+    "pages/myTeam",
+    "pages/personalRecord",
+    "pages/teamRecord",
+    "pages/teamOKR",
+    "pages/teamMate",
+    "pages/invite",
+    "pages/searchOkr",
+    "pages/grantPage",
+    "pages/teamOkrRecord",
+    "pages/aboutUs",
+    "pages/medalPage",
+    "pages/dataAnalysis"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#0a7df2",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "selectedColor": "#0a7df2",
+    "list": [
+      {
+        "pagePath": "pages/okrIntroduce",
+        "text": "OKR介绍",
+        "iconPath": "static/OKR介绍.png",
+        "selectedIconPath": "static/OKR介绍高亮.png"
+      },
+      {
+        "pagePath": "pages/okrPerson",
+        "text": "个人OKR",
+        "iconPath": "static/个人OKR.png",
+        "selectedIconPath": "static/个人OKR高亮.png"
+      },
+      {
+        "pagePath": "pages/okrTeam",
+        "text": "团队OKR",
+        "iconPath": "static/团队OKR.png",
+        "selectedIconPath": "static/团队OKR高亮.png"
+      },
+      {
+        "pagePath": "pages/okrUserinfo",
+        "text": "个人中心",
+        "iconPath": "static/个人中心.png",
+        "selectedIconPath": "static/个人中心高亮.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

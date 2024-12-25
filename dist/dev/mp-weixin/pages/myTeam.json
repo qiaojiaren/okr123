@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的团队",
+  "usingComponents": {
+    "uni-fab": "../node-modules/@dcloudio/uni-ui/lib/uni-fab/uni-fab",
+    "uni-icons": "../node-modules/@dcloudio/uni-ui/lib/uni-icons/uni-icons",
+    "uni-popup": "../node-modules/@dcloudio/uni-ui/lib/uni-popup/uni-popup",
+    "tree-item": "../components/tree-item"
+  }
+}

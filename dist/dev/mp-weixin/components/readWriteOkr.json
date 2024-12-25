@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "uni-fab": "../node-modules/@dcloudio/uni-ui/lib/uni-fab/uni-fab",
+    "uni-popup": "../node-modules/@dcloudio/uni-ui/lib/uni-popup/uni-popup",
+    "uni-section": "../node-modules/@dcloudio/uni-ui/lib/uni-section/uni-section",
+    "uni-datetime-picker": "../node-modules/@dcloudio/uni-ui/lib/uni-datetime-picker/uni-datetime-picker"
+  }
+}

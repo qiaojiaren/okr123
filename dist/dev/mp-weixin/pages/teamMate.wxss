@@ -1,0 +1,19 @@
+
+.main {
+  overflow-y: scroll;
+  height: 100vh;
+}
+.search {
+  /* Safari */
+  position: sticky;
+  top: 0;
+  /* 元素吸顶时距离顶部的位置 */
+  background-color: #fff;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+.empty {
+  width: 100vw;
+}

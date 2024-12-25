@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "团队成员",
+  "usingComponents": {
+    "uni-icons": "../node-modules/@dcloudio/uni-ui/lib/uni-icons/uni-icons",
+    "uni-search-bar": "../node-modules/@dcloudio/uni-ui/lib/uni-search-bar/uni-search-bar",
+    "uni-section": "../node-modules/@dcloudio/uni-ui/lib/uni-section/uni-section",
+    "uni-list-chat": "../node-modules/@dcloudio/uni-ui/lib/uni-list-chat/uni-list-chat",
+    "uni-list": "../node-modules/@dcloudio/uni-ui/lib/uni-list/uni-list"
+  }
+}

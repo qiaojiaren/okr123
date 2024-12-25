@@ -1,0 +1,9 @@
+
+.personalRecord.data-v-65469a46 {
+  margin: 10px;
+  font-size: 13px;
+  color: #999;
+}
+.empty.data-v-65469a46 {
+  width: 100vw;
+}

@@ -1,0 +1,9 @@
+
+.personalRecord.data-v-e4300ece {
+  margin: 10px;
+  font-size: 13px;
+  color: #999;
+}
+.empty.data-v-e4300ece {
+  width: 100vw;
+}

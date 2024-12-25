@@ -1,0 +1,1 @@
+<view class="viewport"><view class="logo"><image src="http://139.159.210.77:1701/media/static/小程序logo.jpg"></image></view><view class="login"><button class="button phone" bindtap="{{a}}"> 点击直接登录 </button><view class="extra"><view class="caption"><text>管理OKR，提升工作效率</text></view></view></view></view>

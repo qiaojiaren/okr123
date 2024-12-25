@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "查看OKR",
+  "usingComponents": {
+    "read-okr": "../components/readOkr"
+  }
+}

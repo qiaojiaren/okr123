@@ -1,0 +1,9 @@
+
+.teamFont.data-v-470bea59 {
+  margin: 10px;
+  font-size: 13px;
+  color: #999;
+}
+.empty.data-v-470bea59 {
+  width: 100vw;
+}
