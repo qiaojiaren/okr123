@@ -16,7 +16,6 @@ if (!Math) {
   "./pages/searchOkr.js";
   "./pages/grantPage.js";
   "./pages/teamOkrRecord.js";
-  "./pages/aboutUs.js";
   "./pages/medalPage.js";
   "./pages/dataAnalysis.js";
 }

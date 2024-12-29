@@ -9327,12 +9327,6 @@ const pages = [
     }
   },
   {
-    path: "pages/aboutUs",
-    style: {
-      navigationBarTitleText: "关于我们"
-    }
-  },
-  {
     path: "pages/medalPage",
     style: {
       navigationBarTitleText: "荣誉勋章"
