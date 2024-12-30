@@ -1,13 +1,16 @@
 "use strict";
 const common_vendor = require("../common/vendor.js");
 if (!Array) {
+  const _easycom_uni_icons2 = common_vendor.resolveComponent("uni-icons");
   const _easycom_uni_popup2 = common_vendor.resolveComponent("uni-popup");
-  _easycom_uni_popup2();
+  (_easycom_uni_icons2 + _easycom_uni_popup2)();
 }
+const _easycom_uni_icons = () => "../node-modules/@dcloudio/uni-ui/lib/uni-icons/uni-icons.js";
 const _easycom_uni_popup = () => "../node-modules/@dcloudio/uni-ui/lib/uni-popup/uni-popup.js";
 if (!Math) {
-  _easycom_uni_popup();
+  (_easycom_uni_icons + Assistant + _easycom_uni_popup)();
 }
+const Assistant = () => "../components/assistant.js";
 const _sfc_main = {
   __name: "okrIntroduce",
   setup(__props) {
@@ -122,73 +125,84 @@ const _sfc_main = {
       squazeShow.value = false;
       whatIf.value.open();
     };
+    const showChat = common_vendor.ref(false);
     return (_ctx, _cache) => {
-      return {
-        a: common_vendor.o(($event) => previewImage(2)),
-        b: common_vendor.o(($event) => handleClose(1)),
-        c: common_vendor.sr(teamIf, "33d8554a-0", {
+      return common_vendor.e({
+        a: common_vendor.o(($event) => showChat.value = true),
+        b: showChat.value
+      }, showChat.value ? {
+        c: common_vendor.p({
+          type: "closeempty",
+          color: "red",
+          size: "24"
+        }),
+        d: common_vendor.o(($event) => showChat.value = false)
+      } : {}, {
+        e: common_vendor.o(($event) => previewImage(2)),
+        f: common_vendor.o(($event) => handleClose(1)),
+        g: common_vendor.sr(teamIf, "33d8554a-2", {
           "k": "teamIf"
         }),
-        d: common_vendor.p({
+        h: common_vendor.p({
           type: "center",
           ["is-mask-click"]: false
         }),
-        e: common_vendor.o(($event) => handleClose(2)),
-        f: common_vendor.sr(whyIf, "33d8554a-1", {
+        i: common_vendor.o(($event) => handleClose(2)),
+        j: common_vendor.sr(whyIf, "33d8554a-3", {
           "k": "whyIf"
         }),
-        g: common_vendor.p({
+        k: common_vendor.p({
           type: "center",
           ["is-mask-click"]: false
         }),
-        h: common_vendor.o(($event) => handleClose(3)),
-        i: common_vendor.sr(howIf, "33d8554a-2", {
+        l: common_vendor.o(($event) => handleClose(3)),
+        m: common_vendor.sr(howIf, "33d8554a-4", {
           "k": "howIf"
-        }),
-        j: common_vendor.p({
-          type: "center",
-          ["is-mask-click"]: false
-        }),
-        k: common_vendor.o(($event) => previewImage(1)),
-        l: common_vendor.o(($event) => handleClose(4)),
-        m: common_vendor.sr(errorsIf, "33d8554a-3", {
-          "k": "errorsIf"
         }),
         n: common_vendor.p({
           type: "center",
           ["is-mask-click"]: false
         }),
-        o: common_vendor.o(($event) => previewImage(3)),
-        p: common_vendor.o(($event) => handleClose(5)),
-        q: common_vendor.sr(personalIf, "33d8554a-4", {
-          "k": "personalIf"
+        o: common_vendor.o(($event) => previewImage(1)),
+        p: common_vendor.o(($event) => handleClose(4)),
+        q: common_vendor.sr(errorsIf, "33d8554a-5", {
+          "k": "errorsIf"
         }),
         r: common_vendor.p({
           type: "center",
           ["is-mask-click"]: false
         }),
-        s: common_vendor.o(($event) => handleClose(6)),
-        t: common_vendor.sr(whatIf, "33d8554a-5", {
-          "k": "whatIf"
+        s: common_vendor.o(($event) => previewImage(3)),
+        t: common_vendor.o(($event) => handleClose(5)),
+        v: common_vendor.sr(personalIf, "33d8554a-6", {
+          "k": "personalIf"
         }),
-        v: common_vendor.p({
+        w: common_vendor.p({
           type: "center",
           ["is-mask-click"]: false
         }),
-        w: common_vendor.o(team),
-        x: common_vendor.o(why),
-        y: common_vendor.o(how),
-        z: common_vendor.o(okrErrors),
-        A: common_vendor.o(personalOkr),
-        B: common_vendor.o(what),
-        C: isAnimating.value ? 1 : "",
-        D: isNoAnimation.value ? 1 : "",
-        E: common_vendor.o(handleTouchStart),
-        F: common_vendor.o(handleTouchMove),
-        G: common_vendor.o(handleTouchEnd),
-        H: `rotateX(${dx.value}deg) rotateY(${dy.value}deg`,
-        I: squazeShow.value
-      };
+        x: common_vendor.o(($event) => handleClose(6)),
+        y: common_vendor.sr(whatIf, "33d8554a-7", {
+          "k": "whatIf"
+        }),
+        z: common_vendor.p({
+          type: "center",
+          ["is-mask-click"]: false
+        }),
+        A: common_vendor.o(team),
+        B: common_vendor.o(why),
+        C: common_vendor.o(how),
+        D: common_vendor.o(okrErrors),
+        E: common_vendor.o(personalOkr),
+        F: common_vendor.o(what),
+        G: isAnimating.value ? 1 : "",
+        H: isNoAnimation.value ? 1 : "",
+        I: common_vendor.o(handleTouchStart),
+        J: common_vendor.o(handleTouchMove),
+        K: common_vendor.o(handleTouchEnd),
+        L: `rotateX(${dx.value}deg) rotateY(${dy.value}deg`,
+        M: squazeShow.value
+      });
     };
   }
 };

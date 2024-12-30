@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onBeforeUnmount } from 'vue';
+import Assistant from '../components/assistant.vue';
 
 //点击图片查看大图
 const previewImage = flag => {
@@ -130,9 +131,33 @@ const what = () => {
   squazeShow.value = false
   whatIf.value.open()
 };
+
+const showChat = ref(false);
+
 </script>
 
 <template>
+  
+  <view>
+    <button @click="showChat = true" class="chat-button">
+      <img src="../static/bot.png" alt="" class="chat-icon">
+      <p>询问ai助手</p>
+    </button>
+    
+    <view v-if="showChat" class="modal">
+      <view class="modal-content">
+        <button @click="showChat = false" class="close-button" plain="true">
+          <uni-icons
+            type="closeempty"
+            color="red"
+            size="24"
+          />
+        </button>
+        <assistant />
+      </view>
+    </view>
+  </view>
+
   <uni-popup ref="teamIf" type="center" :is-mask-click=false>
     <div class="card teamCard" @click="handleClose(1)">
       <h1 class="answerTitle">OKR案例</h1>
@@ -392,6 +417,63 @@ const what = () => {
 </template>
 
 <style>
+.chat-button{
+  width: 60px;
+  height: 60px;
+  position: fixed; /* 保持固定定位 */
+  bottom: 20px; /* 固定在底部 */
+  right: 25px; /* 固定在右侧 */
+  background: transparent; /* 背景透明，使得只有图像可见 */
+  border: none;           /* 去除默认按钮边框 */
+  cursor: pointer;        /* 鼠标悬停时显示手指样式 */
+  padding: 0;            /* 去除内边距 */
+  border-radius: 50%;
+  justify-content: center; /* 水平居中 */
+  align-items: center;    /* 垂直居中 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+}
+
+.chat-icon {
+  width: 50px;           /* 设置图像宽度 */
+  height: 50px;          /* 设置图像高度 */
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* 确保在最上层 */
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 70%; /* 可以根据需要调整宽度 */
+  max-height: 80vh; /* 设置最大高度 */
+  overflow-y: auto; /* 超出部分可滚动 */
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 23px;
+  right: 28px;
+  color:red;
+  display: flex; /* 使用 flex 布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  font-size: 20px; /* 设置字体大小 */
+}
+
 .title {
   font-size: 6vw;
   font-weight: bold;
@@ -466,6 +548,9 @@ const what = () => {
   align-items: center;
   align-content: center;
 }
+button[plain] {
+		border: 0
+	}
 
 .color {
   opacity: 1;

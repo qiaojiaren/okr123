@@ -7,16 +7,16 @@
 		}
 	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/okrIntroduce",
+      "style": {
+        "navigationBarTitleText": "OKR介绍"
+      }
+    },
 		{
 			"path": "pages/loginPage",
 			"style": {
 				"navigationBarTitleText": "登录"
-			}
-		},
-		{
-			"path": "pages/okrIntroduce",
-			"style": {
-				"navigationBarTitleText": "OKR介绍"
 			}
 		},
 		{

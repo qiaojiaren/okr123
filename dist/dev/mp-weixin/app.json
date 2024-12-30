@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/loginPage",
     "pages/okrIntroduce",
+    "pages/loginPage",
     "pages/okrPerson",
     "pages/okrTeam",
     "pages/okrUserinfo",

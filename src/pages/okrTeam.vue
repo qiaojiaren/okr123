@@ -69,11 +69,9 @@ const content = ref([
     iconPath: 'http://139.159.210.77:1701/media/static/创建团队.png',
     text: '创建团队',
   },
-
 ])
 
 const trigger = (e) => {
-
   if (e.index == 0) {
     console.log(loginMessage.token)
     uni.showModal({
@@ -116,10 +114,7 @@ const trigger = (e) => {
           uni.$showMsg('取消了创建团队')
       }
     })
-
   }
-
-
 }
 
 
