@@ -359,12 +359,12 @@ const addShortPlan = () => {
   uni.showModal({
     title: '请选择待添加的任务类型',
     content: '',
-    confirmText: 'P2',
-    cancelText: 'P1',
+    confirmText: 'Priority2',
+    cancelText: 'Priority1',
     success: (res) => {
-      if (res.confirm) { //选择P2
+      if (res.confirm) { //选择Priority2
         addPlanFun(2, 2)
-      } else { //选择P1
+      } else { //选择Priority1
         addPlanFun(2, 1)
       }
     }
@@ -757,19 +757,19 @@ const trigger = e => {
           </p>
 
           <p class="text">
-            P1：
+            Priority1：
           </p>
           <p class="text" v-for="item in loginMessage.okrInformation.secondQuadrantVO.priorityNumberOnes"
             :key="item.id">
-            {{ item.content }}
+            &nbsp;-&nbsp;{{ item.content }}
           </p>
 
           <p class="text">
-            P2：
+            Priority2：
           </p>
           <p class="text" v-for="item in loginMessage.okrInformation.secondQuadrantVO.priorityNumberTwos"
             :key="item.id">
-            {{ item.content }}
+            &nbsp;-&nbsp;{{ item.content }}
           </p>
         </div>
         <div class="editButton yellow" @click="secondQuadrant">查看/编辑</div>
@@ -783,11 +783,11 @@ const trigger = e => {
           </p>
 
           <p class="text">
-            P1：优先级最高，必须要做的事情
+            Priority1：优先级最高，必须要做的事情
           </p>
 
           <p class="text">
-            P2：优先级次之，如果时间紧迫，宁愿不完成P2的任务，也要保证P1的任务完成
+            Priority2：优先级次之，如果时间紧迫，宁愿不完成Priority2的任务，也要保证Priority1的任务完成
           </p>
         </div>
         <div class="editButton yellow" @click="secondQuadrant">查看/编辑</div>
@@ -998,7 +998,7 @@ const trigger = e => {
       <div class="cardContainer">
         <h2 class="cardFont fontTitle">短期计划</h2>
         <h2 class="cardFont fontTitle">截止时间：{{ loginMessage.okrInformation.secondQuadrantVO.deadline }}</h2>
-        <h2 class="cardFont fontTitle">P1：</h2>
+        <h2 class="cardFont fontTitle">Priority1：</h2>
         <div class="planYellowContent" v-for="item in loginMessage.okrInformation.secondQuadrantVO.priorityNumberOnes"
           :key="item.id">
           <label class="radio">
@@ -1010,7 +1010,7 @@ const trigger = e => {
             @click="planDelete(1, item.id)">
         </div>
 
-        <h2 class="cardFont fontTitle">P2：</h2>
+        <h2 class="cardFont fontTitle">Priority2：</h2>
         <div class="planYellowContent" v-for="item in loginMessage.okrInformation.secondQuadrantVO.priorityNumberTwos"
           :key="item.id">
           <label class="radio">

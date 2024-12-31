@@ -45,7 +45,6 @@ uni.request({
     dayRecord.value = res.data.data;
 
     // 一、四象限取近20天
-    //TODO: 优化代码
     for(let i = 0; i < dayRecord.value.length;i++){
       const [year, month, day] = dayRecord.value[i].recordDate.split(' ')[0].split('-')
       recordDate.value[i] = `${month}-${day}`

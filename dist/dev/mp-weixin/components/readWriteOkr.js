@@ -344,8 +344,8 @@ const _sfc_main = {
       common_vendor.index.showModal({
         title: "请选择待添加的任务类型",
         content: "",
-        confirmText: "P2",
-        cancelText: "P1",
+        confirmText: "Priority2",
+        cancelText: "Priority1",
         success: (res) => {
           if (res.confirm) {
             addPlanFun(2, 2);

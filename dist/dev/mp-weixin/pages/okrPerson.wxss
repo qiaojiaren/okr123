@@ -151,21 +151,9 @@
   align-items: center;
   flex-direction: column;
 }
-.medalTitle.data-v-c02477a6,
-.title2.data-v-c02477a6 {
-  width: 100%;
-  color: #fff;
-  text-align: center;
-}
 .title2.data-v-c02477a6 {
   margin-top: 10vw;
   font-size: 6vw;
-}
-.medalTitle.data-v-c02477a6 {
-  font-size: 60rpx;
-  border-radius: 50%;
-  color: rgb(255, 255, 255);
-  text-shadow: 0 0 5rpx yellow, 0 0 10rpx yellow, 0 0 15rpx yellow, 0 0 20rpx yellow;
 }
 .context.data-v-c02477a6 {
   width: 90%;
@@ -308,11 +296,6 @@
 }
 .popup .QRcode.data-v-c02477a6 {
   width: 450rpx;
-}
-.medalTips.data-v-c02477a6 {
-  color: #fff;
-  font-size: 30rpx;
-  margin-top: 28rpx;
 }
 .button.data-v-c02477a6 {
   display: flex;

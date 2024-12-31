@@ -24,12 +24,6 @@ const medal = () => {
   });
 }
 
-//HACK
-// const aboutUs = () => {
-//   uni.navigateTo({
-//     url: '/pages/aboutUs' // 跳转的页面路径
-//   });
-// }
 
 //用户默认头像与昵称
 const nickName = ref('用户昵称')
@@ -139,27 +133,6 @@ const setName = e => {
         </div>
       </view>
     </view>
-    
-    <!-- HACK -->
-    <!-- <view class="orders">
-      <view class="title" @tap="medal">
-        荣誉勋章
-        <div class="navigator" hover-class="none">
-          点击查看<text class="icon-right"></text>
-        </div>
-      </view>
-    </view> -->
-
-    <!--//HACK-->
-    <!-- <view class="orders">
-      <view class="title" @tap="aboutUs">
-        关于我们
-        <div class="navigator" url="/pagesOrder/list/list?type=0" hover-class="none">
-          点击查看<text class="icon-right"></text>
-        </div>
-      </view>
-    </view> -->
-
   </scroll-view>
 </template>
 

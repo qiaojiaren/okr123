@@ -43,49 +43,6 @@ const getPersonOkrList = () => {
 }
 getPersonOkrList()
 
-//HACK
-//展示新勋章
-// const popup1 = ref()
-// const popup2 = ref()
-// const showMedal = ref({
-//   description: "",
-//   isRead: false,
-//   issueTime: "",
-//   level: 0,
-//   medalId: 0,
-//   name: "",
-//   url: ""
-// })
-
-//HACK
-//获取用户未读的勋章
-// const getUnreadMedal = () => {
-//   uni.request({
-//     url: 'http://47.92.173.60:1701/medal/list/unread',
-//     method: 'GET',
-//     header: {
-//       "Login-Type": "r6Vsr0",
-//       "Token": loginMessage.token,
-//     },
-//     success(res) {
-//       if (res.data.code === 2001) {
-//         uni.redirectTo({
-//           url: '/pages/loginPage'
-//         });
-//       }
-//       if (res.data.data.length) {
-//         showMedal.value = res.data.data[0]
-//         showMedal.value.url = 'http://47.92.173.60:1701/' + showMedal.value.url
-//         console.log(showMedal.value);
-//         if (notCreatedPerson.value) {
-//           popup1.value.open()
-//         } else if (createdPerson.value) {
-//           popup2.value.open()
-//         }
-//       }
-//     }
-//   })
-// }
 
 //每次页面显示时，触发onShow函数
 import { onShow, onReady } from '@dcloudio/uni-app'
@@ -95,54 +52,7 @@ onShow(() => {
   createdTeam.value = false
 })
 
-//HACK
-// onReady(() => {
-//   getUnreadMedal()
-// })
 
-//HACK
-// const close = () => {
-//   //用户知晓获得新勋章
-//   uni.request({
-//     url: `http://47.92.173.60:1701/medal/read/${showMedal.value.medalId}`,
-//     method: 'POST',
-//     header: {
-//       "Login-Type": "r6Vsr0",
-//       "Token": loginMessage.token,
-//     }
-//   }).then(res => {
-//     if (res.data.code === 200) {
-//       if (notCreatedPerson.value) {
-//         popup1.value.close()
-//       } else if (createdPerson.value) {
-//         popup2.value.close()
-//       }
-//     }
-//   })
-// }
-
-//HACK
-//跳转到勋章墙
-// const toWall = () => {
-//   if (notCreatedPerson.value) {
-//     popup1.value.close()
-//   } else if (createdPerson.value) {
-//     popup2.value.close()
-//   }
-//   //用户知晓获得新勋章
-//   uni.request({
-//     url: `http://47.92.173.60:1701/medal/read/${showMedal.value.medalId}`,
-//     method: 'POST',
-//     header: {
-//       "Login-Type": "r6Vsr0",
-//       "Token": loginMessage.token,
-//     }
-//   }).then(async res => {
-//     await uni.navigateTo({
-//       url: 'medalPage'
-//     });
-//   })
-// }
 
 // 顶部导航栏文字切换
 const handleSwiperChange = event => {
@@ -330,24 +240,6 @@ const trigger = () => {
             <div class="saying">还没有OKR</div>
           </div>
 
-          <!--HACK-->
-          <!-- 获得新勋章弹框展示 -->
-          <!-- <uni-popup ref="popup1" type="center" :mask="true" :mask-click="false">
-            <view class="popup">
-              <view class="icon-close">
-                <uni-icons type="close" size="30" @click="close" color="#fff">
-                </uni-icons>
-              </view>
-              <div class="medalTitle">获得新勋章</div>
-              <image :src="showMedal.url" mode="widthFix" class="QRcode"></image>
-              <div class="medalTitle">{{ showMedal.name }}</div>
-              <div class="medalTips">{{ showMedal.description }}</div>
-              <button class="button" @click="toWall">
-                前往勋章墙查看
-              </button>
-            </view>
-          </uni-popup> -->
-
         </div>
 
         <!-- 创建引导页面 -->
@@ -376,24 +268,6 @@ const trigger = () => {
         <div v-show="createdPerson">
           <p class="smallTips">当前为个人模式，左右划动屏幕可切换成团队模式</p>
           <readWriteOkr></readWriteOkr>
-
-          <!-- HACK -->
-          <!-- 获得新勋章弹框展示 -->
-          <!-- <uni-popup ref="popup2" type="center" :mask="true" :mask-click="false">
-            <view class="popup">
-              <view class="icon-close">
-                <uni-icons type="close" size="30" @click="close" color="#fff">
-                </uni-icons>
-              </view>
-              <div class="medalTitle">获得新勋章</div>
-              <image :src="showMedal.url" mode="widthFix" class="QRcode"></image>
-              <div class="medalTitle">{{ showMedal.name }}Lv{{ showMedal.level }}</div>
-              <div class="medalTips">{{ showMedal.description }}</div>
-              <button class="button" @click="toWall">
-                前往勋章墙查看
-              </button>
-            </view>
-          </uni-popup> -->
         </div>
 
       </view>
@@ -587,23 +461,10 @@ const trigger = () => {
 
 }
 
-.medalTitle,
-.title2 {
-  width: 100%;
-  color: #fff;
-  text-align: center;
-}
 
 .title2 {
   margin-top: 10vw;
   font-size: 6vw;
-}
-
-.medalTitle {
-  font-size: 60rpx;
-  border-radius: 50%;
-  color: rgb(255, 255, 255);
-  text-shadow: 0 0 5rpx yellow, 0 0 10rpx yellow, 0 0 15rpx yellow, 0 0 20rpx yellow;
 }
 
 .context {
@@ -768,12 +629,6 @@ const trigger = () => {
   .QRcode {
     width: 450rpx;
   }
-}
-
-.medalTips {
-  color: #fff;
-  font-size: 30rpx;
-  margin-top: 28rpx;
 }
 
 .button {

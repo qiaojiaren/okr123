@@ -62,7 +62,6 @@ uni.request({
   }
 })
 
-//TODO:这里渲染可能出了问题
 const showRecord = (coreId, scene) => {
   uni.navigateTo({
     url: '/pages/searchOkr' // 跳转的页面路径
