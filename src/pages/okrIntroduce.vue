@@ -9,19 +9,19 @@ const previewImage = flag => {
       //图片预览API
       uni.previewImage({
         //urls为图片路径，是字符串数组
-        urls: ["http://139.159.210.77:1701/media/static/OKR模板.png"],
+        urls: ["http://47.92.173.60:1701/media/static/OKR模板.png"],
       });
       break
     case 2:
       uni.previewImage({
         //urls为图片路径，是字符串数组
-        urls: ["http://139.159.210.77:1701/media/static/OKR案例.png"],
+        urls: ["http://47.92.173.60:1701/media/static/OKR案例.png"],
       });
       break
     case 3:
       uni.previewImage({
         //urls为图片路径，是字符串数组
-        urls: ["http://139.159.210.77:1701/media/static/树状图示例.png"],
+        urls: ["http://47.92.173.60:1701/media/static/树状图示例.png"],
       });
       break
   }
@@ -167,7 +167,7 @@ const showChat = ref(false);
         OKR 工作法的指导下，公司成功走出困境，融到了第二轮投资，从此业务蒸蒸日上。
       </p>
       <p class="tips">点击图片可查看大图</p>
-      <img style="width: 100%;" src="http://139.159.210.77:1701/media/static/OKR案例.png" alt=""
+      <img style="width: 100%;" src="http://47.92.173.60:1701/media/static/OKR案例.png" alt=""
         @click.stop="previewImage(2)">
     </div>
   </uni-popup>
@@ -259,7 +259,7 @@ const showChat = ref(false);
         （说明：第一象限是右上角象限，第二象限是左上角象限，第三象限是左下角象限，第四象限是右下角象限）
       </p>
       <p class="tips">点击图片可查看大图</p>
-      <img style="width: 100%;" src="http://139.159.210.77:1701/media/static/OKR模板.png" alt=""
+      <img style="width: 100%;" src="http://47.92.173.60:1701/media/static/OKR模板.png" alt=""
         @click.stop="previewImage(1)">
       <p class="contentTitle">第一象限</p>
       <p class="contentTitle">
@@ -353,7 +353,7 @@ const showChat = ref(false);
       <p class="contentTitle">团队OKR</p>
       <p style="text-indent: 2em;" class="text">该页面会以树状图的形式展示整个团队的OKR，以互联网公司为例，可创建如下的树状图。</p>
       <p class="tips">点击图片可查看大图</p>
-      <img style="width: 100%;" src="http://139.159.210.77:1701/media/static/树状图示例.png" alt=""
+      <img style="width: 100%;" src="http://47.92.173.60:1701/media/static/树状图示例.png" alt=""
         @click.stop="previewImage(3)">
       <p class="contentTitle">树状图创建流程：</p>
       <p style="text-indent: 2em;" class="text">发起者创建团队OKR -> 生成邀请码，邀请部门负责人加入，创建“节点” -> 各部门负责人根据团队OKR创建本部门OKR ->
@@ -386,15 +386,15 @@ const showChat = ref(false);
   <!-- <div class="textBox">
     <view class="title">你将获得</view>
     <view class="flexBox">
-      <img class="png" src="http://139.159.210.77:1701/media/static/灯泡.png" alt="">
+      <img class="png" src="http://47.92.173.60:1701/media/static/灯泡.png" alt="">
       <span>明确OKR工作法的实施流程</span>
     </view>
     <view class="flexBox">
-      <img class="png" src="http://139.159.210.77:1701/media/static/灯泡.png" alt="">
+      <img class="png" src="http://47.92.173.60:1701/media/static/灯泡.png" alt="">
       <span>学会激发团队潜能，协助团队达成目标</span>
     </view>
     <view class="flexBox">
-      <img class="png" src="http://139.159.210.77:1701/media/static/灯泡.png" alt="">
+      <img class="png" src="http://47.92.173.60:1701/media/static/灯泡.png" alt="">
       <span>掌握促进个人完成工作和学习目标的方法</span>
     </view>
   </div> -->
@@ -498,7 +498,7 @@ const showChat = ref(false);
   box-shadow: 3px 3px 15px #535353;
   color: white;
   text-shadow: 2px 2px 3px #000000;
-  background: rgba(63, 194, 237, 0.5) url(http://139.159.210.77:1701/media/static/靶子.png) no-repeat center;
+  background: rgba(63, 194, 237, 0.5) url(http://47.92.173.60:1701/media/static/靶子.png) no-repeat center;
 }
 
 

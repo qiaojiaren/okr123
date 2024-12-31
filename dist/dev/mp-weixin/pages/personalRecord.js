@@ -22,7 +22,7 @@ const _sfc_main = {
     const personalOkrList = common_vendor.ref();
     const personalTeamOkrList = common_vendor.ref();
     common_vendor.index.request({
-      url: "http://139.159.210.77:1701/personal/list",
+      url: "http://47.92.173.60:1701/personal/list",
       method: "GET",
       header: {
         "Login-Type": "r6Vsr0",
@@ -46,7 +46,7 @@ const _sfc_main = {
       }
     });
     common_vendor.index.request({
-      url: "http://139.159.210.77:1701/teampersonal/list",
+      url: "http://47.92.173.60:1701/teampersonal/list",
       method: "GET",
       header: {
         "Login-Type": "r6Vsr0",

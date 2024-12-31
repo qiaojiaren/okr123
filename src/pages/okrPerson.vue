@@ -9,7 +9,7 @@ const loginMessage = useCounterStore()
 //获取个人OKR列表
 const getPersonOkrList = () => {
   uni.request({
-    url: 'http://139.159.210.77:1701/personal/list',
+    url: 'http://47.92.173.60:1701/personal/list',
     method: 'GET',
     header: {
       "Login-Type": "r6Vsr0",
@@ -43,47 +43,49 @@ const getPersonOkrList = () => {
 }
 getPersonOkrList()
 
+//HACK
 //展示新勋章
-const popup1 = ref()
-const popup2 = ref()
-const showMedal = ref({
-  description: "",
-  isRead: false,
-  issueTime: "",
-  level: 0,
-  medalId: 0,
-  name: "",
-  url: ""
-})
+// const popup1 = ref()
+// const popup2 = ref()
+// const showMedal = ref({
+//   description: "",
+//   isRead: false,
+//   issueTime: "",
+//   level: 0,
+//   medalId: 0,
+//   name: "",
+//   url: ""
+// })
 
+//HACK
 //获取用户未读的勋章
-const getUnreadMedal = () => {
-  uni.request({
-    url: 'http://139.159.210.77:1701/medal/list/unread',
-    method: 'GET',
-    header: {
-      "Login-Type": "r6Vsr0",
-      "Token": loginMessage.token,
-    },
-    success(res) {
-      if (res.data.code === 2001) {
-        uni.redirectTo({
-          url: '/pages/loginPage'
-        });
-      }
-      if (res.data.data.length) {
-        showMedal.value = res.data.data[0]
-        showMedal.value.url = 'http://139.159.210.77:1701/' + showMedal.value.url
-        console.log(showMedal.value);
-        if (notCreatedPerson.value) {
-          popup1.value.open()
-        } else if (createdPerson.value) {
-          popup2.value.open()
-        }
-      }
-    }
-  })
-}
+// const getUnreadMedal = () => {
+//   uni.request({
+//     url: 'http://47.92.173.60:1701/medal/list/unread',
+//     method: 'GET',
+//     header: {
+//       "Login-Type": "r6Vsr0",
+//       "Token": loginMessage.token,
+//     },
+//     success(res) {
+//       if (res.data.code === 2001) {
+//         uni.redirectTo({
+//           url: '/pages/loginPage'
+//         });
+//       }
+//       if (res.data.data.length) {
+//         showMedal.value = res.data.data[0]
+//         showMedal.value.url = 'http://47.92.173.60:1701/' + showMedal.value.url
+//         console.log(showMedal.value);
+//         if (notCreatedPerson.value) {
+//           popup1.value.open()
+//         } else if (createdPerson.value) {
+//           popup2.value.open()
+//         }
+//       }
+//     }
+//   })
+// }
 
 //每次页面显示时，触发onShow函数
 import { onShow, onReady } from '@dcloudio/uni-app'
@@ -93,51 +95,54 @@ onShow(() => {
   createdTeam.value = false
 })
 
-onReady(() => {
-  getUnreadMedal()
-})
+//HACK
+// onReady(() => {
+//   getUnreadMedal()
+// })
 
-const close = () => {
-  //用户知晓获得新勋章
-  uni.request({
-    url: `http://139.159.210.77:1701/medal/read/${showMedal.value.medalId}`,
-    method: 'POST',
-    header: {
-      "Login-Type": "r6Vsr0",
-      "Token": loginMessage.token,
-    }
-  }).then(res => {
-    if (res.data.code === 200) {
-      if (notCreatedPerson.value) {
-        popup1.value.close()
-      } else if (createdPerson.value) {
-        popup2.value.close()
-      }
-    }
-  })
-}
+//HACK
+// const close = () => {
+//   //用户知晓获得新勋章
+//   uni.request({
+//     url: `http://47.92.173.60:1701/medal/read/${showMedal.value.medalId}`,
+//     method: 'POST',
+//     header: {
+//       "Login-Type": "r6Vsr0",
+//       "Token": loginMessage.token,
+//     }
+//   }).then(res => {
+//     if (res.data.code === 200) {
+//       if (notCreatedPerson.value) {
+//         popup1.value.close()
+//       } else if (createdPerson.value) {
+//         popup2.value.close()
+//       }
+//     }
+//   })
+// }
 
+//HACK
 //跳转到勋章墙
-const toWall = () => {
-  if (notCreatedPerson.value) {
-    popup1.value.close()
-  } else if (createdPerson.value) {
-    popup2.value.close()
-  }
-  //用户知晓获得新勋章
-  uni.request({
-    url: `http://139.159.210.77:1701/medal/read/${showMedal.value.medalId}`,
-    method: 'POST',
-    header: {
-      "Login-Type": "r6Vsr0",
-      "Token": loginMessage.token,
-    }
-  }).then(async res => {
-    await uni.navigateTo({
-      url: 'medalPage'
-    });
-  })
-}
+// const toWall = () => {
+//   if (notCreatedPerson.value) {
+//     popup1.value.close()
+//   } else if (createdPerson.value) {
+//     popup2.value.close()
+//   }
+//   //用户知晓获得新勋章
+//   uni.request({
+//     url: `http://47.92.173.60:1701/medal/read/${showMedal.value.medalId}`,
+//     method: 'POST',
+//     header: {
+//       "Login-Type": "r6Vsr0",
+//       "Token": loginMessage.token,
+//     }
+//   }).then(async res => {
+//     await uni.navigateTo({
+//       url: 'medalPage'
+//     });
+//   })
+// }
 
 // 顶部导航栏文字切换
 const handleSwiperChange = event => {
@@ -180,7 +185,7 @@ const backPerson = () => {
 const createCompletePerson = () => {
   //创建OKR
   uni.request({
-    url: 'http://139.159.210.77:1701/core/create',
+    url: 'http://47.92.173.60:1701/core/create',
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -226,7 +231,7 @@ const noTeam = ref(true)
 //获取团队模式OKR列表
 const getTeamPersonList = () => {
   uni.request({
-    url: 'http://139.159.210.77:1701/teampersonal/list',
+    url: 'http://47.92.173.60:1701/teampersonal/list',
     method: 'GET',
     header: {
       "Login-Type": "r6Vsr0",
@@ -258,7 +263,7 @@ const pattern = ref({
 
 const content = ref([
   {
-    iconPath: 'http://139.159.210.77:1701/media/static/返回.png',
+    iconPath: 'http://47.92.173.60:1701/media/static/返回.png',
     text: '返回',
   }
 ])
@@ -319,14 +324,15 @@ const trigger = () => {
           </div>
 
           <div class="middle">
-            <div class="saying"><img class="png" src="http://139.159.210.77:1701/media/static/灯泡.png" alt="">定目标，抓过程，拿结果
+            <div class="saying"><img class="png" src="http://47.92.173.60:1701/media/static/灯泡.png" alt="">定目标，抓过程，拿结果
             </div>
             <button class="button phone" @click="createOkrPerson">创建OKR</button>
             <div class="saying">还没有OKR</div>
           </div>
 
+          <!--HACK-->
           <!-- 获得新勋章弹框展示 -->
-          <uni-popup ref="popup1" type="center" :mask="true" :mask-click="false">
+          <!-- <uni-popup ref="popup1" type="center" :mask="true" :mask-click="false">
             <view class="popup">
               <view class="icon-close">
                 <uni-icons type="close" size="30" @click="close" color="#fff">
@@ -340,7 +346,7 @@ const trigger = () => {
                 前往勋章墙查看
               </button>
             </view>
-          </uni-popup>
+          </uni-popup> -->
 
         </div>
 
@@ -371,8 +377,9 @@ const trigger = () => {
           <p class="smallTips">当前为个人模式，左右划动屏幕可切换成团队模式</p>
           <readWriteOkr></readWriteOkr>
 
+          <!-- HACK -->
           <!-- 获得新勋章弹框展示 -->
-          <uni-popup ref="popup2" type="center" :mask="true" :mask-click="false">
+          <!-- <uni-popup ref="popup2" type="center" :mask="true" :mask-click="false">
             <view class="popup">
               <view class="icon-close">
                 <uni-icons type="close" size="30" @click="close" color="#fff">
@@ -386,7 +393,7 @@ const trigger = () => {
                 前往勋章墙查看
               </button>
             </view>
-          </uni-popup>
+          </uni-popup> -->
         </div>
 
       </view>
@@ -400,7 +407,7 @@ const trigger = () => {
           <div class="teamList">团队模式OKR列表</div>
           <!-- 未加入团队的样式 -->
           <div v-if="noTeam">
-            <img class="empty" src="http://139.159.210.77:1701/media/static/空状态加入的团队.png" alt="">
+            <img class="empty" src="http://47.92.173.60:1701/media/static/空状态加入的团队.png" alt="">
           </div>
 
           <!-- 已加入团队的样式 -->

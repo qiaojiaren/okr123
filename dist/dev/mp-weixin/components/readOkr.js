@@ -63,7 +63,7 @@ const _sfc_main = {
     });
     const content = common_vendor.ref([
       {
-        iconPath: "http://139.159.210.77:1701/media/static/查看总结.png",
+        iconPath: "http://47.92.173.60:1701/media/static/查看总结.png",
         text: "查看总结"
       }
     ]);

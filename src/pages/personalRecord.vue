@@ -12,7 +12,7 @@ const personalTeamOkrList = ref()
 
 //获取个人模式OKR列表
 uni.request({
-  url: 'http://139.159.210.77:1701/personal/list',
+  url: 'http://47.92.173.60:1701/personal/list',
   method: 'GET',
   header: {
     "Login-Type": "r6Vsr0",
@@ -38,7 +38,7 @@ uni.request({
 
 //获取团队模式OKR列表
 uni.request({
-  url: 'http://139.159.210.77:1701/teampersonal/list',
+  url: 'http://47.92.173.60:1701/teampersonal/list',
   method: 'GET',
   header: {
     "Login-Type": "r6Vsr0",
@@ -80,7 +80,7 @@ const showRecord = (coreId, scene) => {
     <text class="personalRecord">个人模式OKR历史记录</text>
     <!-- 无历史记录时的显示效果 -->
     <div v-if="personalNoOkr">
-      <img class="empty" src="http://139.159.210.77:1701/media/static/空状态OKR历史记录.png" alt="">
+      <img class="empty" src="http://47.92.173.60:1701/media/static/空状态OKR历史记录.png" alt="">
     </div>
 
     <!-- 有历史记录时的显示效果 -->
@@ -98,7 +98,7 @@ const showRecord = (coreId, scene) => {
     <text class="personalRecord">团队模式OKR历史记录</text>
     <!-- 无历史记录时的显示效果 -->
     <div v-if="personalTeamNoOkr">
-      <img class="empty" src="http://139.159.210.77:1701/media/static/空状态OKR历史记录.png" alt="">
+      <img class="empty" src="http://47.92.173.60:1701/media/static/空状态OKR历史记录.png" alt="">
     </div>
 
     <!-- 有历史记录时的显示效果 -->

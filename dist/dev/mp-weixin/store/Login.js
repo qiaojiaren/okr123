@@ -16,7 +16,7 @@ const useCounterStore = common_vendor.defineStore(
     const id = common_vendor.ref("");
     const getOkrInformation = () => {
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701/core/search",
+        url: "http://47.92.173.60:1701/core/search",
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",

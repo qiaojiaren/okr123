@@ -23,7 +23,7 @@ const _sfc_main = {
     const managelist = common_vendor.ref([]);
     const request = () => {
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701/team/list",
+        url: "http://47.92.173.60:1701/team/list",
         method: "get",
         header: {
           "Login-Type": "r6Vsr0",
@@ -33,7 +33,7 @@ const _sfc_main = {
           managelist.value = res.data.data;
           console.log(res.data.data);
           common_vendor.index.request({
-            url: "http://139.159.210.77:1701/teampersonal/list",
+            url: "http://47.92.173.60:1701/teampersonal/list",
             method: "get",
             header: {
               "Login-Type": "r6Vsr0",
@@ -73,7 +73,7 @@ const _sfc_main = {
     });
     const content = common_vendor.ref([
       {
-        iconPath: "http://139.159.210.77:1701/media/static/创建团队.png",
+        iconPath: "http://47.92.173.60:1701/media/static/创建团队.png",
         text: "创建团队"
       }
     ]);
@@ -92,7 +92,7 @@ const _sfc_main = {
           success: (res) => {
             if (res.confirm) {
               common_vendor.index.request({
-                url: "http://139.159.210.77:1701/core/create",
+                url: "http://47.92.173.60:1701/core/create",
                 method: "POST",
                 header: {
                   "Login-Type": "r6Vsr0",
@@ -127,7 +127,7 @@ const _sfc_main = {
       loginMessage.teamname = name;
       loginMessage.nickname = item.nickname;
       console.log(item.id);
-      loginMessage.photo = "http://139.159.210.77:1701/" + item.photo;
+      loginMessage.photo = "http://47.92.173.60:1701/" + item.photo;
       if (loginMessage.id == item.id)
         loginMessage.priviledge = true;
       else

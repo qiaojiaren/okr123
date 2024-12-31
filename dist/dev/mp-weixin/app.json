@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/okrIntroduce",
     "pages/loginPage",
+    "pages/okrIntroduce",
     "pages/okrPerson",
     "pages/okrTeam",
     "pages/okrUserinfo",
@@ -14,7 +14,6 @@
     "pages/searchOkr",
     "pages/grantPage",
     "pages/teamOkrRecord",
-    "pages/medalPage",
     "pages/dataAnalysis"
   ],
   "window": {

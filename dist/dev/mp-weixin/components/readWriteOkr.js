@@ -40,7 +40,7 @@ const _sfc_main = {
     };
     const sliderChange = (e, id) => {
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701/keyresult/update",
+        url: "http://47.92.173.60:1701/keyresult/update",
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",
@@ -75,7 +75,7 @@ const _sfc_main = {
         return;
       }
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701/firstquadrant/init",
+        url: "http://47.92.173.60:1701/firstquadrant/init",
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",
@@ -128,7 +128,7 @@ const _sfc_main = {
         return;
       }
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701/keyresult/add",
+        url: "http://47.92.173.60:1701/keyresult/add",
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",
@@ -197,7 +197,7 @@ const _sfc_main = {
         return;
       }
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701/secondquadrant/init",
+        url: "http://47.92.173.60:1701/secondquadrant/init",
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",
@@ -253,7 +253,7 @@ const _sfc_main = {
         return;
       }
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701/thirdquadrant/init",
+        url: "http://47.92.173.60:1701/thirdquadrant/init",
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",
@@ -309,7 +309,7 @@ const _sfc_main = {
               return;
             }
             common_vendor.index.request({
-              url: `http://139.159.210.77:1701/task/${option}/add`,
+              url: `http://47.92.173.60:1701/task/${option}/add`,
               method: "POST",
               header: {
                 "Login-Type": "r6Vsr0",
@@ -360,7 +360,7 @@ const _sfc_main = {
     };
     const planCompleted = (taskNum, id, content2, isCompleted) => {
       common_vendor.index.request({
-        url: `http://139.159.210.77:1701/task/${taskNum}/update`,
+        url: `http://47.92.173.60:1701/task/${taskNum}/update`,
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",
@@ -386,7 +386,7 @@ const _sfc_main = {
     };
     const planDelete = (taskNum, id) => {
       common_vendor.index.request({
-        url: `http://139.159.210.77:1701/task/${taskNum}/remove`,
+        url: `http://47.92.173.60:1701/task/${taskNum}/remove`,
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",
@@ -440,7 +440,7 @@ const _sfc_main = {
         }
       }
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701/flag/add",
+        url: "http://47.92.173.60:1701/flag/add",
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",
@@ -475,7 +475,7 @@ const _sfc_main = {
     };
     const updateColor = (label, id, color) => {
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701/flag/update",
+        url: "http://47.92.173.60:1701/flag/update",
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",
@@ -505,7 +505,7 @@ const _sfc_main = {
     };
     const deleteState = (id) => {
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701/flag/remove",
+        url: "http://47.92.173.60:1701/flag/remove",
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",
@@ -609,7 +609,7 @@ const _sfc_main = {
         return;
       }
       await common_vendor.index.request({
-        url: "http://139.159.210.77:1701/core/complete",
+        url: "http://47.92.173.60:1701/core/complete",
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",
@@ -627,7 +627,7 @@ const _sfc_main = {
         }
       });
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701/core/summary",
+        url: "http://47.92.173.60:1701/core/summary",
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",
@@ -674,7 +674,7 @@ const _sfc_main = {
     });
     const content = common_vendor.ref([
       {
-        iconPath: "http://139.159.210.77:1701/media/static/数据分析.png",
+        iconPath: "http://47.92.173.60:1701/media/static/数据分析.png",
         text: "数据分析"
       }
     ]);

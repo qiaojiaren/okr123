@@ -12,7 +12,7 @@ const _sfc_main = {
         success(res1) {
           if (res1.code) {
             common_vendor.index.request({
-              url: "http://139.159.210.77:1701/user/login",
+              url: "http://47.92.173.60:1701/user/login",
               method: "POST",
               header: {
                 "Login-Type": "r6Vsr0"
@@ -47,7 +47,7 @@ const _sfc_main = {
     };
     const join = () => {
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701/core/create",
+        url: "http://47.92.173.60:1701/core/create",
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",

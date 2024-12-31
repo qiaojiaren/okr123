@@ -25,7 +25,7 @@ const _sfc_main = {
     });
     common_vendor.onShow(() => {
       common_vendor.index.request({
-        url: `http://139.159.210.77:1701/team/tree/${teamId.value}`,
+        url: `http://47.92.173.60:1701/team/tree/${teamId.value}`,
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",

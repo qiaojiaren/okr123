@@ -10,7 +10,7 @@ const arr = ref([])
 
 const teamMate = () => {
   uni.request({
-    url: `http://139.159.210.77:1701/teampersonal/members/${loginMessage.teamId}`,
+    url: `http://47.92.173.60:1701/teampersonal/members/${loginMessage.teamId}`,
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -33,9 +33,9 @@ const teamMate = () => {
 //处理图片路径
 const handlePhotoUrl = () => {
   for (let i = 0; i < arr.value.length; i++) {
-    if (!arr.value[i].photo.startsWith("http://139.159.210.77:1701/")) {
+    if (!arr.value[i].photo.startsWith("http://47.92.173.60:1701/")) {
       // 如果不是以指定前缀开头，则在字符串前拼接上指定前缀
-      arr.value[i].photo = 'http://139.159.210.77:1701/' + arr.value[i].photo
+      arr.value[i].photo = 'http://47.92.173.60:1701/' + arr.value[i].photo
     }
   }
 }
@@ -68,7 +68,7 @@ const remove = (id) => {
           uni.$showMsg('无权限进行该操作')
         else
           uni.request({
-            url: `http://139.159.210.77:1701/teampersonal/remove/${id}`,
+            url: `http://47.92.173.60:1701/teampersonal/remove/${id}`,
             method: 'get',
             header: {
               "Login-Type": "r6Vsr0",
@@ -134,7 +134,7 @@ const isadminstration = () => {
           </view>
         </uni-list-chat>
       </div>
-      <img v-else class="empty" src="http://139.159.210.77:1701/media/static/空状态成员列表.png" alt="">
+      <img v-else class="empty" src="http://47.92.173.60:1701/media/static/空状态成员列表.png" alt="">
     </uni-list>
   </div>
 </template>

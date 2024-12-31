@@ -2,8 +2,8 @@
 Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const common_vendor = require("./common/vendor.js");
 if (!Math) {
-  "./pages/okrIntroduce.js";
   "./pages/loginPage.js";
+  "./pages/okrIntroduce.js";
   "./pages/okrPerson.js";
   "./pages/okrTeam.js";
   "./pages/okrUserinfo.js";
@@ -16,7 +16,6 @@ if (!Math) {
   "./pages/searchOkr.js";
   "./pages/grantPage.js";
   "./pages/teamOkrRecord.js";
-  "./pages/medalPage.js";
   "./pages/dataAnalysis.js";
 }
 const _sfc_main = {

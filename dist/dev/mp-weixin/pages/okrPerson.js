@@ -1,15 +1,8 @@
 "use strict";
 const common_vendor = require("../common/vendor.js");
 const store_Login = require("../store/Login.js");
-if (!Array) {
-  const _easycom_uni_icons2 = common_vendor.resolveComponent("uni-icons");
-  const _easycom_uni_popup2 = common_vendor.resolveComponent("uni-popup");
-  (_easycom_uni_icons2 + _easycom_uni_popup2)();
-}
-const _easycom_uni_icons = () => "../node-modules/@dcloudio/uni-ui/lib/uni-icons/uni-icons.js";
-const _easycom_uni_popup = () => "../node-modules/@dcloudio/uni-ui/lib/uni-popup/uni-popup.js";
 if (!Math) {
-  (_easycom_uni_icons + _easycom_uni_popup + readWriteOkr)();
+  readWriteOkr();
 }
 const readWriteOkr = () => "../components/readWriteOkr.js";
 const _sfc_main = {
@@ -18,7 +11,7 @@ const _sfc_main = {
     const loginMessage = store_Login.useCounterStore();
     const getPersonOkrList = () => {
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701/personal/list",
+        url: "http://47.92.173.60:1701/personal/list",
         method: "GET",
         header: {
           "Login-Type": "r6Vsr0",
@@ -50,89 +43,11 @@ const _sfc_main = {
       });
     };
     getPersonOkrList();
-    const popup1 = common_vendor.ref();
-    const popup2 = common_vendor.ref();
-    const showMedal = common_vendor.ref({
-      description: "",
-      isRead: false,
-      issueTime: "",
-      level: 0,
-      medalId: 0,
-      name: "",
-      url: ""
-    });
-    const getUnreadMedal = () => {
-      common_vendor.index.request({
-        url: "http://139.159.210.77:1701/medal/list/unread",
-        method: "GET",
-        header: {
-          "Login-Type": "r6Vsr0",
-          "Token": loginMessage.token
-        },
-        success(res) {
-          if (res.data.code === 2001) {
-            common_vendor.index.redirectTo({
-              url: "/pages/loginPage"
-            });
-          }
-          if (res.data.data.length) {
-            showMedal.value = res.data.data[0];
-            showMedal.value.url = "http://139.159.210.77:1701/" + showMedal.value.url;
-            console.log(showMedal.value);
-            if (notCreatedPerson.value) {
-              popup1.value.open();
-            } else if (createdPerson.value) {
-              popup2.value.open();
-            }
-          }
-        }
-      });
-    };
     common_vendor.onShow(() => {
       getPersonOkrList();
       myOkrTeam.value = true;
       createdTeam.value = false;
     });
-    common_vendor.onReady(() => {
-      getUnreadMedal();
-    });
-    const close = () => {
-      common_vendor.index.request({
-        url: `http://139.159.210.77:1701/medal/read/${showMedal.value.medalId}`,
-        method: "POST",
-        header: {
-          "Login-Type": "r6Vsr0",
-          "Token": loginMessage.token
-        }
-      }).then((res) => {
-        if (res.data.code === 200) {
-          if (notCreatedPerson.value) {
-            popup1.value.close();
-          } else if (createdPerson.value) {
-            popup2.value.close();
-          }
-        }
-      });
-    };
-    const toWall = () => {
-      if (notCreatedPerson.value) {
-        popup1.value.close();
-      } else if (createdPerson.value) {
-        popup2.value.close();
-      }
-      common_vendor.index.request({
-        url: `http://139.159.210.77:1701/medal/read/${showMedal.value.medalId}`,
-        method: "POST",
-        header: {
-          "Login-Type": "r6Vsr0",
-          "Token": loginMessage.token
-        }
-      }).then(async (res) => {
-        await common_vendor.index.navigateTo({
-          url: "medalPage"
-        });
-      });
-    };
     const handleSwiperChange = (event) => {
       switch (event.detail.current) {
         case 0:
@@ -165,7 +80,7 @@ const _sfc_main = {
     };
     const createCompletePerson = () => {
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701/core/create",
+        url: "http://47.92.173.60:1701/core/create",
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",
@@ -204,7 +119,7 @@ const _sfc_main = {
     const noTeam = common_vendor.ref(true);
     const getTeamPersonList = () => {
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701/teampersonal/list",
+        url: "http://47.92.173.60:1701/teampersonal/list",
         method: "GET",
         header: {
           "Login-Type": "r6Vsr0",
@@ -232,7 +147,7 @@ const _sfc_main = {
     });
     common_vendor.ref([
       {
-        iconPath: "http://139.159.210.77:1701/media/static/返回.png",
+        iconPath: "http://47.92.173.60:1701/media/static/返回.png",
         text: "返回"
       }
     ]);
@@ -240,56 +155,19 @@ const _sfc_main = {
       return common_vendor.e({
         a: notCreatedPerson.value
       }, notCreatedPerson.value ? {
-        b: common_vendor.o(createOkrPerson),
-        c: common_vendor.o(close),
-        d: common_vendor.p({
-          type: "close",
-          size: "30",
-          color: "#fff"
-        }),
-        e: showMedal.value.url,
-        f: common_vendor.t(showMedal.value.name),
-        g: common_vendor.t(showMedal.value.description),
-        h: common_vendor.o(toWall),
-        i: common_vendor.sr(popup1, "c02477a6-0", {
-          "k": "popup1"
-        }),
-        j: common_vendor.p({
-          type: "center",
-          mask: true,
-          ["mask-click"]: false
-        })
+        b: common_vendor.o(createOkrPerson)
       } : {}, {
-        k: createOKPerson.value
+        c: createOKPerson.value
       }, createOKPerson.value ? {
-        l: common_vendor.o(backPerson),
-        m: common_vendor.o(createCompletePerson)
+        d: common_vendor.o(backPerson),
+        e: common_vendor.o(createCompletePerson)
       } : {}, {
-        n: common_vendor.o(close),
-        o: common_vendor.p({
-          type: "close",
-          size: "30",
-          color: "#fff"
-        }),
-        p: showMedal.value.url,
-        q: common_vendor.t(showMedal.value.name),
-        r: common_vendor.t(showMedal.value.level),
-        s: common_vendor.t(showMedal.value.description),
-        t: common_vendor.o(toWall),
-        v: common_vendor.sr(popup2, "c02477a6-3", {
-          "k": "popup2"
-        }),
-        w: common_vendor.p({
-          type: "center",
-          mask: true,
-          ["mask-click"]: false
-        }),
-        x: createdPerson.value,
-        y: myOkrTeam.value
+        f: createdPerson.value,
+        g: myOkrTeam.value
       }, myOkrTeam.value ? common_vendor.e({
-        z: noTeam.value
+        h: noTeam.value
       }, noTeam.value ? {} : {
-        A: common_vendor.f(personalTeamOkr.value, (item, k0, i0) => {
+        i: common_vendor.f(personalTeamOkr.value, (item, k0, i0) => {
           return common_vendor.e({
             a: !item.isOver
           }, !item.isOver ? {
@@ -300,7 +178,7 @@ const _sfc_main = {
           });
         })
       }) : {}, {
-        B: common_vendor.o(handleSwiperChange)
+        j: common_vendor.o(handleSwiperChange)
       });
     };
   }

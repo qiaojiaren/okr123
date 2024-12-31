@@ -26,7 +26,7 @@ const credit3 = ref([]);
 const credit4 = ref([]);
 const recordDate = ref([]);
 uni.request({
-  url: "http://139.159.210.77:1701/corerecord/search/dayrecord",
+  url: "http://47.92.173.60:1701/corerecord/search/dayrecord",
   method: "POST",
   header: {
     "Login-Type": "r6Vsr0",

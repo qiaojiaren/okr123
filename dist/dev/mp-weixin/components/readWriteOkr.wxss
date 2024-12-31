@@ -169,13 +169,13 @@
   border-radius: 50%;
 }
 .circle1.data-v-794a7ae7 {
-  background-color: green;
+  background-color: #008672;
 }
 .circle2.data-v-794a7ae7 {
-  background-color: yellow;
+  background-color: #E4E669;
 }
 .circle3.data-v-794a7ae7 {
-  background-color: red;
+  background-color: #D73A4A;
 }
 .rightArrow.data-v-794a7ae7 {
   position: fixed;

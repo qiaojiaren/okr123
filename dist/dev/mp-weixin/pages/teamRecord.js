@@ -20,7 +20,7 @@ const _sfc_main = {
     const teamOkrList = common_vendor.ref();
     const teamNoOkr = common_vendor.ref(true);
     common_vendor.index.request({
-      url: "http://139.159.210.77:1701/teampersonal/list",
+      url: "http://47.92.173.60:1701/teampersonal/list",
       method: "get",
       header: {
         "Login-Type": "r6Vsr0",

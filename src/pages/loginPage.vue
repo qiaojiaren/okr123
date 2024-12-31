@@ -12,7 +12,7 @@ const handleLogin = () => {
       if (res1.code) {
         //将获取到的code传递给后端
         uni.request({
-          url: 'http://139.159.210.77:1701/user/login',
+          url: 'http://47.92.173.60:1701/user/login',
           method: 'POST',
           header: {
             "Login-Type": "r6Vsr0"
@@ -29,7 +29,7 @@ const handleLogin = () => {
               //展示登录成功的信息
               uni.$showMsg('登录成功！')
               uni.request({
-                url: 'http://139.159.210.77:1701/user/userinfo',
+                url: 'http://47.92.173.60:1701/user/userinfo',
                 method: 'GET',
                 header: {
                   "Login-Type": "r6Vsr0",
@@ -63,7 +63,7 @@ import { onShow } from '@dcloudio/uni-app'
 onShow(() => {
   //调用接口判断token是否失效
   uni.request({
-    url: 'http://139.159.210.77:1701',
+    url: 'http://47.92.173.60:1701',
     method: 'GET',
     header: {
       "Login-Type": "r6Vsr0",
@@ -84,7 +84,7 @@ onShow(() => {
 <template>
   <view class="viewport">
     <view class="logo">
-      <image src="http://139.159.210.77:1701/media/static/小程序logo.jpg"></image>
+      <image src="http://47.92.173.60:1701/media/static/小程序logo.jpg"></image>
     </view>
     <view class="login">
       <button class="button phone" @click="handleLogin">

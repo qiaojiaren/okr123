@@ -57,7 +57,7 @@ const pattern = ref({
 
 const content = ref([
   {
-    iconPath: 'http://139.159.210.77:1701/media/static/查看总结.png',
+    iconPath: 'http://47.92.173.60:1701/media/static/查看总结.png',
     text: '查看总结',
   }
 ])
@@ -72,9 +72,9 @@ const trigger = () => {
 <template>
   <!-- 创建OKR显示页面 -->
   <div>
-    <img src="http://139.159.210.77:1701/media/static/右箭头.png" alt="" class="rightArrow">
-    <img src="http://139.159.210.77:1701/media/static/上箭头.png" alt="" class="topArrow">
-    <img src="http://139.159.210.77:1701/media/static/靶子.png" alt="" class="target">
+    <img src="http://47.92.173.60:1701/media/static/右箭头.png" alt="" class="rightArrow">
+    <img src="http://47.92.173.60:1701/media/static/上箭头.png" alt="" class="topArrow">
+    <img src="http://47.92.173.60:1701/media/static/靶子.png" alt="" class="target">
 
     <div class="flexBox1">
 
@@ -292,7 +292,7 @@ const trigger = () => {
             <checkbox value="r2" color="rgb(242, 177, 73)" :checked=item.isCompleted :disabled=true />
             {{ item.content }}
           </label>
-          <img class="deleteState" src="http://139.159.210.77:1701/media/static/黄色叉叉.png" alt=""
+          <img class="deleteState" src="http://47.92.173.60:1701/media/static/黄色叉叉.png" alt=""
             @click="planDelete(1, item.id)">
         </div>
 

@@ -10,7 +10,7 @@ const _sfc_main = {
         success(res1) {
           if (res1.code) {
             common_vendor.index.request({
-              url: "http://139.159.210.77:1701/user/login",
+              url: "http://47.92.173.60:1701/user/login",
               method: "POST",
               header: {
                 "Login-Type": "r6Vsr0"
@@ -25,7 +25,7 @@ const _sfc_main = {
                   loginMessage.token = res.data.data.Token;
                   common_vendor.index.$showMsg("登录成功！");
                   common_vendor.index.request({
-                    url: "http://139.159.210.77:1701/user/userinfo",
+                    url: "http://47.92.173.60:1701/user/userinfo",
                     method: "GET",
                     header: {
                       "Login-Type": "r6Vsr0",
@@ -54,7 +54,7 @@ const _sfc_main = {
     };
     common_vendor.onShow(() => {
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701",
+        url: "http://47.92.173.60:1701",
         method: "GET",
         header: {
           "Login-Type": "r6Vsr0",

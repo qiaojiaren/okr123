@@ -21,7 +21,7 @@ onLoad(options => {
 //展示团队成员
 const teamMate = () => {
   uni.request({
-    url: `http://139.159.210.77:1701/teampersonal/members/${id.value}`,
+    url: `http://47.92.173.60:1701/teampersonal/members/${id.value}`,
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -43,9 +43,9 @@ const teamMate = () => {
 //处理图片路径
 const handlePhotoUrl = () => {
   for (let i = 0; i < arr.value.length; i++) {
-    if (!arr.value[i].photo.startsWith("http://139.159.210.77:1701/")) {
+    if (!arr.value[i].photo.startsWith("http://47.92.173.60:1701/")) {
       // 如果不是以指定前缀开头，则在字符串前拼接上指定前缀
-      arr.value[i].photo = 'http://139.159.210.77:1701/' + arr.value[i].photo
+      arr.value[i].photo = 'http://47.92.173.60:1701/' + arr.value[i].photo
     }
   }
 }
@@ -88,7 +88,7 @@ const grant = (userid) => {
             } else {
               teamName.value = res.content
               uni.request({
-                url: 'http://139.159.210.77:1701/team/grant',
+                url: 'http://47.92.173.60:1701/team/grant',
                 method: 'post',
                 header: {
                   "Login-Type": "r6Vsr0",
@@ -147,7 +147,7 @@ const grant = (userid) => {
           v-for="(item, index) in arr" :key="index" clickable @click="grant(item.userId)">
         </uni-list-chat>
       </div>
-      <img v-else class="empty" src="http://139.159.210.77:1701/media/static/空状态成员列表.png" alt="">
+      <img v-else class="empty" src="http://47.92.173.60:1701/media/static/空状态成员列表.png" alt="">
     </uni-list>
   </div>
 </template>

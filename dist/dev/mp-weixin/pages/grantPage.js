@@ -34,7 +34,7 @@ const _sfc_main = {
     });
     const teamMate = () => {
       common_vendor.index.request({
-        url: `http://139.159.210.77:1701/teampersonal/members/${id.value}`,
+        url: `http://47.92.173.60:1701/teampersonal/members/${id.value}`,
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",
@@ -54,8 +54,8 @@ const _sfc_main = {
     };
     const handlePhotoUrl = () => {
       for (let i = 0; i < arr.value.length; i++) {
-        if (!arr.value[i].photo.startsWith("http://139.159.210.77:1701/")) {
-          arr.value[i].photo = "http://139.159.210.77:1701/" + arr.value[i].photo;
+        if (!arr.value[i].photo.startsWith("http://47.92.173.60:1701/")) {
+          arr.value[i].photo = "http://47.92.173.60:1701/" + arr.value[i].photo;
         }
       }
     };
@@ -96,7 +96,7 @@ const _sfc_main = {
                 } else {
                   teamName.value = res2.content;
                   common_vendor.index.request({
-                    url: "http://139.159.210.77:1701/team/grant",
+                    url: "http://47.92.173.60:1701/team/grant",
                     method: "post",
                     header: {
                       "Login-Type": "r6Vsr0",

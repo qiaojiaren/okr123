@@ -37,7 +37,7 @@ const avatarUrl = ref('https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQ
 
 //从后端获取用户信息并渲染
 uni.request({
-  url: 'http://139.159.210.77:1701/user/userinfo',
+  url: 'http://47.92.173.60:1701/user/userinfo',
   method: 'GET',
   header: {
     "Login-Type": "r6Vsr0",
@@ -51,7 +51,7 @@ uni.request({
     }
     nickName.value = res.data.data.nickname
     if(res.data.data.photo){
-      avatarUrl.value = 'http://139.159.210.77:1701/' + res.data.data.photo
+      avatarUrl.value = 'http://47.92.173.60:1701/' + res.data.data.photo
     }
   }
 })
@@ -61,7 +61,7 @@ const onChooseAvatar = e => {
   avatarUrl.value = e.detail.avatarUrl
   //将头像保存到后端
   uni.uploadFile({
-    url: 'http://139.159.210.77:1701/user/photo/upload',
+    url: 'http://47.92.173.60:1701/user/photo/upload',
     filePath: avatarUrl.value, //头像
     header: {
       "Login-Type": "r6Vsr0",
@@ -83,7 +83,7 @@ const onChooseAvatar = e => {
 const setName = e => {
   nickName.value = e.detail.value
    uni.request({
-    url: 'http://139.159.210.77:1701/user/improve',
+    url: 'http://47.92.173.60:1701/user/improve',
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -140,14 +140,15 @@ const setName = e => {
       </view>
     </view>
     
-    <view class="orders">
+    <!-- HACK -->
+    <!-- <view class="orders">
       <view class="title" @tap="medal">
         荣誉勋章
         <div class="navigator" hover-class="none">
           点击查看<text class="icon-right"></text>
         </div>
       </view>
-    </view>
+    </view> -->
 
     <!--//HACK-->
     <!-- <view class="orders">

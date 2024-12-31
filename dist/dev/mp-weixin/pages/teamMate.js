@@ -26,7 +26,7 @@ const _sfc_main = {
     const arr = common_vendor.ref([]);
     const teamMate = () => {
       common_vendor.index.request({
-        url: `http://139.159.210.77:1701/teampersonal/members/${loginMessage.teamId}`,
+        url: `http://47.92.173.60:1701/teampersonal/members/${loginMessage.teamId}`,
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",
@@ -47,8 +47,8 @@ const _sfc_main = {
     };
     const handlePhotoUrl = () => {
       for (let i = 0; i < arr.value.length; i++) {
-        if (!arr.value[i].photo.startsWith("http://139.159.210.77:1701/")) {
-          arr.value[i].photo = "http://139.159.210.77:1701/" + arr.value[i].photo;
+        if (!arr.value[i].photo.startsWith("http://47.92.173.60:1701/")) {
+          arr.value[i].photo = "http://47.92.173.60:1701/" + arr.value[i].photo;
         }
       }
     };
@@ -76,7 +76,7 @@ const _sfc_main = {
               common_vendor.index.$showMsg("无权限进行该操作");
             else
               common_vendor.index.request({
-                url: `http://139.159.210.77:1701/teampersonal/remove/${id}`,
+                url: `http://47.92.173.60:1701/teampersonal/remove/${id}`,
                 method: "get",
                 header: {
                   "Login-Type": "r6Vsr0",

@@ -19,19 +19,19 @@ const _sfc_main = {
         case 1:
           common_vendor.index.previewImage({
             //urls为图片路径，是字符串数组
-            urls: ["http://139.159.210.77:1701/media/static/OKR模板.png"]
+            urls: ["http://47.92.173.60:1701/media/static/OKR模板.png"]
           });
           break;
         case 2:
           common_vendor.index.previewImage({
             //urls为图片路径，是字符串数组
-            urls: ["http://139.159.210.77:1701/media/static/OKR案例.png"]
+            urls: ["http://47.92.173.60:1701/media/static/OKR案例.png"]
           });
           break;
         case 3:
           common_vendor.index.previewImage({
             //urls为图片路径，是字符串数组
-            urls: ["http://139.159.210.77:1701/media/static/树状图示例.png"]
+            urls: ["http://47.92.173.60:1701/media/static/树状图示例.png"]
           });
           break;
       }

@@ -8046,7 +8046,6 @@ const createHook = (lifecycle) => (hook, target = getCurrentInstance()) => {
 };
 const onShow = /* @__PURE__ */ createHook(ON_SHOW);
 const onLoad = /* @__PURE__ */ createHook(ON_LOAD);
-const onReady = /* @__PURE__ */ createHook(ON_READY);
 const icons = {
   "id": "2852637",
   "name": "uniui图标库",
@@ -18355,15 +18354,15 @@ const easycom = {
 };
 const pages = [
   {
-    path: "pages/okrIntroduce",
-    style: {
-      navigationBarTitleText: "OKR介绍"
-    }
-  },
-  {
     path: "pages/loginPage",
     style: {
       navigationBarTitleText: "登录"
+    }
+  },
+  {
+    path: "pages/okrIntroduce",
+    style: {
+      navigationBarTitleText: "OKR介绍"
     }
   },
   {
@@ -18436,12 +18435,6 @@ const pages = [
     path: "pages/teamOkrRecord",
     style: {
       navigationBarTitleText: "团队OKR历史记录"
-    }
-  },
-  {
-    path: "pages/medalPage",
-    style: {
-      navigationBarTitleText: "荣誉勋章"
     }
   },
   {
@@ -21754,7 +21747,6 @@ exports.o = o$1;
 exports.onBeforeUnmount = onBeforeUnmount;
 exports.onLoad = onLoad;
 exports.onMounted = onMounted;
-exports.onReady = onReady;
 exports.onShow = onShow;
 exports.p = p$1;
 exports.reactive = reactive;

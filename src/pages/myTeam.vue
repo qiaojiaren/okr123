@@ -12,7 +12,7 @@ onMounted(() => {
   }
   else
     uni.request({
-      url: `http://139.159.210.77:1701/teampersonal/members/${loginMessage.teamId}`,
+      url: `http://47.92.173.60:1701/teampersonal/members/${loginMessage.teamId}`,
       method: 'POST',
       header: {
         "Login-Type": "r6Vsr0",
@@ -58,7 +58,7 @@ import { onShow } from '@dcloudio/uni-app'
 onShow(() => {
   //获取团队所在的树
   uni.request({
-    url: `http://139.159.210.77:1701/team/tree/${loginMessage.teamId}`,
+    url: `http://47.92.173.60:1701/team/tree/${loginMessage.teamId}`,
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -154,15 +154,15 @@ const pattern = ref({
 
 const content = ref([
   {
-    iconPath: 'http://139.159.210.77:1701/media/static/创建团队.png',
+    iconPath: 'http://47.92.173.60:1701/media/static/创建团队.png',
     text: '邀请成员',
   },
   {
-    iconPath: 'http://139.159.210.77:1701/media/static/邀请加入团队.png',
+    iconPath: 'http://47.92.173.60:1701/media/static/邀请加入团队.png',
     text: '查看成员',
   },
   {
-    iconPath: 'http://139.159.210.77:1701/media/static/修改.png',
+    iconPath: 'http://47.92.173.60:1701/media/static/修改.png',
     text: '团队名称',
   },
 ])
@@ -174,7 +174,7 @@ const trigger = (e) => {
 
   if (e.index == 0) {
     uni.request({
-      url: `http://139.159.210.77:1701/team/qrcode/${loginMessage.teamId}`,
+      url: `http://47.92.173.60:1701/team/qrcode/${loginMessage.teamId}`,
       method: 'POST',
       header: {
         "Login-Type": "r6Vsr0",
@@ -187,7 +187,7 @@ const trigger = (e) => {
           });
         }
         if (res.data.data) {
-          qrcode.value = "http://139.159.210.77:1701/" + res.data.data
+          qrcode.value = "http://47.92.173.60:1701/" + res.data.data
           popup.value.open()
         }
         else {
@@ -232,7 +232,7 @@ const trigger = (e) => {
             uni.$showMsg('请勿提交空数据！')
           } else {
             uni.request({
-              url: 'http://139.159.210.77:1701/team/rename',
+              url: 'http://47.92.173.60:1701/team/rename',
               method: 'post',
               header: {
                 "Login-Type": "r6Vsr0",

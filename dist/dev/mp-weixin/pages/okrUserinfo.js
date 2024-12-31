@@ -17,16 +17,10 @@ const _sfc_main = {
         // 跳转的页面路径
       });
     };
-    const medal = () => {
-      common_vendor.index.navigateTo({
-        url: "/pages/medalPage"
-        // 跳转的页面路径
-      });
-    };
     const nickName = common_vendor.ref("用户昵称");
     const avatarUrl = common_vendor.ref("https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0");
     common_vendor.index.request({
-      url: "http://139.159.210.77:1701/user/userinfo",
+      url: "http://47.92.173.60:1701/user/userinfo",
       method: "GET",
       header: {
         "Login-Type": "r6Vsr0",
@@ -40,14 +34,14 @@ const _sfc_main = {
         }
         nickName.value = res.data.data.nickname;
         if (res.data.data.photo) {
-          avatarUrl.value = "http://139.159.210.77:1701/" + res.data.data.photo;
+          avatarUrl.value = "http://47.92.173.60:1701/" + res.data.data.photo;
         }
       }
     });
     const onChooseAvatar = (e) => {
       avatarUrl.value = e.detail.avatarUrl;
       common_vendor.index.uploadFile({
-        url: "http://139.159.210.77:1701/user/photo/upload",
+        url: "http://47.92.173.60:1701/user/photo/upload",
         filePath: avatarUrl.value,
         //头像
         header: {
@@ -68,7 +62,7 @@ const _sfc_main = {
     const setName = (e) => {
       nickName.value = e.detail.value;
       common_vendor.index.request({
-        url: "http://139.159.210.77:1701/user/improve",
+        url: "http://47.92.173.60:1701/user/improve",
         method: "POST",
         header: {
           "Login-Type": "r6Vsr0",
@@ -94,8 +88,7 @@ const _sfc_main = {
         d: nickName.value,
         e: common_vendor.o(($event) => nickName.value = $event.detail.value),
         f: common_vendor.o(personalRecord),
-        g: common_vendor.o(teamRecord),
-        h: common_vendor.o(medal)
+        g: common_vendor.o(teamRecord)
       };
     };
   }

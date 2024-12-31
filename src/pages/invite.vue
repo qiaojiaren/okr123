@@ -18,7 +18,7 @@ onLoad(() => {
       if (res1.code) {
         //将获取到的code传递给后端
         uni.request({
-          url: 'http://139.159.210.77:1701/user/login',
+          url: 'http://47.92.173.60:1701/user/login',
           method: 'POST',
           header: {
             "Login-Type": "r6Vsr0"
@@ -62,7 +62,7 @@ const cancel = () => {
 //点击确认加入按钮
 const join = () => {
   uni.request({
-    url: 'http://139.159.210.77:1701/core/create',
+    url: 'http://47.92.173.60:1701/core/create',
     method: 'POST',
     header: {
       "Login-Type": "r6Vsr0",
@@ -93,7 +93,7 @@ const join = () => {
 <template>
   <view class="viewport">
     <view class="logo">
-      <image src="http://139.159.210.77:1701/media/static/小程序logo.jpg"></image>
+      <image src="http://47.92.173.60:1701/media/static/小程序logo.jpg"></image>
     </view>
     <view class="login">
       <button class="button phone" @click="join">
