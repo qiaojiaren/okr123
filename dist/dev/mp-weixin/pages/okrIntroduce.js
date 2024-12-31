@@ -132,8 +132,7 @@ const _sfc_main = {
         b: showChat.value
       }, showChat.value ? {
         c: common_vendor.p({
-          type: "closeempty",
-          color: "red",
+          type: "plus-filled",
           size: "24"
         }),
         d: common_vendor.o(($event) => showChat.value = false)

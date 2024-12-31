@@ -51,6 +51,9 @@
   align-items: center; /* 垂直居中 */
   font-size: 20px; /* 设置字体大小 */
 }
+.close-icon{
+  transform: rotate(45deg); /* 旋转 45 度 */
+}
 .title {
   font-size: 6vw;
   font-weight: bold;

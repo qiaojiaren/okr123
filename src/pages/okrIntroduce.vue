@@ -148,8 +148,8 @@ const showChat = ref(false);
       <view class="modal-content">
         <button @click="showChat = false" class="close-button" plain="true">
           <uni-icons
-            type="closeempty"
-            color="red"
+            class="close-icon"
+            type="plus-filled"
             size="24"
           />
         </button>
@@ -472,6 +472,10 @@ const showChat = ref(false);
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
   font-size: 20px; /* 设置字体大小 */
+}
+
+.close-icon{
+  transform: rotate(45deg); /* 旋转 45 度 */
 }
 
 .title {
