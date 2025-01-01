@@ -34,9 +34,8 @@ const botAvatar = "../static/bot1.png";
 const messages = ref([]);
 const inputText = ref("");
 const chatHistoryList = ref([]); // 聊天历史记录
-const messageScrollView = ref(null);//创建一个ref来引用scroll-view组件
-const lastItemId = ref("")
-
+const messageScrollView = ref(null); //创建一个ref来引用scroll-view组件
+const lastItemId = ref("");
 
 chatHistoryList.value.push({
   role: "system",
@@ -155,7 +154,7 @@ const suggestionsList = [
   "避开OKR常见的坑",
   "OKR案例？",
   "小程序使用指南",
-  "个人OKR的两种模式"
+  "个人OKR的两种模式",
 ];
 
 // 当前显示的提示语
@@ -166,7 +165,9 @@ const showSuggestions = ref(true);
 
 // 初始化提示语
 const refreshSuggestions = () => {
-  suggestions.value = suggestionsList.sort(() => Math.random() - 0.5).slice(0, 3);
+  suggestions.value = suggestionsList
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 3);
 };
 
 // 点击提示语发送消息
@@ -291,7 +292,8 @@ const sendMessage = async () => {
 
         // 如果上一条消息是助手消息，则追加内容
         if (lastMessage && !lastMessage.isUser) {
-          chatHistoryList.value[chatHistoryList.value.length - 1].content += data.payload.choices.text[0].content;
+          chatHistoryList.value[chatHistoryList.value.length - 1].content +=
+            data.payload.choices.text[0].content;
         } else {
           // 否则，添加一条新消息
           chatHistoryList.value.push({
@@ -300,38 +302,23 @@ const sendMessage = async () => {
           });
         }
 
-        nextTick(()=>{
-          lastItemId.value = `item-${messages.value.length - 1}`
-        })
+        nextTick(() => {
+          lastItemId.value = `item-${messages.value.length - 1}`;
+        });
+
       } else {
         console.log("出错了", data.header.code, ":", data.header.message);
         connect.close();
       }
-
     });
   }
 };
 
-watch(messages,(newVal)=>{
-  nextTick(()=>{
-    lastItemId.value = `item-${newVal.length - 1}`
-  })
-})
-
-// const scrollToBottom = () => {
-// 	nextTick(() => {
-// 		uni.createSelectorQuery()
-// 			.in(getCurrentInstance())
-// 			.select('#scroll-view-content')
-// 			.boundingClientRect((res) => {
-// 				let top = res.height - scrollViewHeight.value;
-// 				if (top > 0) {
-// 					scrollTop.value = top;
-// 				}
-// 			})
-// 			.exec();
-// 	});
-// };
+watch(messages, (newVal) => {
+  nextTick(() => {
+    lastItemId.value = `item-${newVal.length - 1}`;
+  });
+});
 
 //鉴权
 const getWebSocketUrl = () => {
@@ -416,6 +403,13 @@ const getWebSocketUrl = () => {
       <!-- 提示窗口 -->
       <view class="suggestions-container" v-if="showSuggestions">
         <view class="suggestions-box">
+          <view class="topline">
+            <view class="title"><p>猜你想问：</p></view>
+            <button class="refresh-button" @click="refreshSuggestions">
+              <p>换一批</p>
+              <uni-icons type="loop" size="15" class="refresh-icon"></uni-icons>
+            </button>
+          </view>
           <view
             class="suggestion"
             v-for="(suggestion, index) in suggestions"
@@ -424,9 +418,6 @@ const getWebSocketUrl = () => {
           >
             {{ suggestion }}
           </view>
-          <button class="refresh-button" @click="refreshSuggestions">
-            换一批
-          </button>
         </view>
       </view>
     </scroll-view>
@@ -572,18 +563,48 @@ button {
   background-color: #e0e0e0;
 }
 
-.refresh-button {
-  margin-top: 10px;
-  width: 100%;
-  padding: 8px;
-  background-color: #007bff;
-  color: white;
+.topline {
+  display: flex;
+  height: 4vh;
+}
+
+.title {
+  justify-content: flex-start; /* 水平居左 */
+  align-items: center; /* 上下居中 */
+  height: 3vh;
+  width: 50%;
+  background-color: #fff;
+  color: #000;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  text-align: center;
+  font-size: 15px;
+}
+
+.refresh-button {
+  justify-content: flex-end; /* 水平居右 */
+  align-items: center; /* 上下居中 */
+  height: 3vh;
+  width: 45%;
+  margin: 0 5px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  display: flex; /* 使用 flex 布局 */
 }
 
 .refresh-button:hover {
-  background-color: #0056b3;
+  background-color: #808080;
+}
+
+.refresh-icon {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 上下居中 */
 }
 </style>

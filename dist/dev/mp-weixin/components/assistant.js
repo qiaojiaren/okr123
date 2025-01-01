@@ -1,5 +1,13 @@
 "use strict";
 const common_vendor = require("../common/vendor.js");
+if (!Array) {
+  const _easycom_uni_icons2 = common_vendor.resolveComponent("uni-icons");
+  _easycom_uni_icons2();
+}
+const _easycom_uni_icons = () => "../node-modules/@dcloudio/uni-ui/lib/uni-icons/uni-icons.js";
+if (!Math) {
+  _easycom_uni_icons();
+}
 const _sfc_main = {
   __name: "assistant",
   setup(__props) {
@@ -177,20 +185,24 @@ GET ${httpUrlPath} HTTP/1.1`;
         }),
         b: showSuggestions.value
       }, showSuggestions.value ? {
-        c: common_vendor.f(suggestions.value, (suggestion, index, i0) => {
+        c: common_vendor.p({
+          type: "loop",
+          size: "15"
+        }),
+        d: common_vendor.o(refreshSuggestions),
+        e: common_vendor.f(suggestions.value, (suggestion, index, i0) => {
           return {
             a: common_vendor.t(suggestion),
             b: index,
             c: common_vendor.o(($event) => sendSuggestion(suggestion), index)
           };
-        }),
-        d: common_vendor.o(refreshSuggestions)
+        })
       } : {}, {
-        e: lastItemId.value,
-        f: common_vendor.o(sendMessage),
-        g: inputText.value,
-        h: common_vendor.o(($event) => inputText.value = $event.detail.value),
-        i: common_vendor.o(sendMessage)
+        f: lastItemId.value,
+        g: common_vendor.o(sendMessage),
+        h: inputText.value,
+        i: common_vendor.o(($event) => inputText.value = $event.detail.value),
+        j: common_vendor.o(sendMessage)
       });
     };
   }
